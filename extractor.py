@@ -511,7 +511,8 @@ class PNCPContractionsExtractor:
         self.save_state(state)
     
     def consolidate_old_files(self, days_threshold: int = None):
-        """Consolida arquivos diários antigos em arquivos mensais para otimizar storage"""
+        """Consolida arquivos diários antigos em arquivos mensais para otimizar storage
+        Considera tanto arquivos diários quanto arquivos já consolidados do mesmo mês"""
         if days_threshold is None:
             days_threshold = self.config.consolidation_days
         
@@ -532,7 +533,8 @@ class PNCPContractionsExtractor:
                 month = int(month_dir.name.split("=")[1])
                 
                 month_key = f"{year}-{month:02d}"
-                monthly_groups[month_key] = []
+                if month_key not in monthly_groups:
+                    monthly_groups[month_key] = {'daily_files': [], 'consolidated_file': None}
                 
                 for daily_file in month_dir.glob("pncp_contratos_*.parquet"):
                     # Extrair data do nome do arquivo
@@ -540,53 +542,123 @@ class PNCPContractionsExtractor:
                     try:
                         file_date = datetime.strptime(date_str, "%Y%m%d")
                         if file_date < cutoff_date:
-                            monthly_groups[month_key].append(daily_file)
+                            monthly_groups[month_key]['daily_files'].append(daily_file)
                             files_to_consolidate.append(daily_file)
                     except ValueError:
                         continue
         
-        if not files_to_consolidate:
-            self.logger.info("Nenhum arquivo elegível para consolidação encontrado")
+        # Verificar arquivos já consolidados existentes
+        for consolidated_file in consolidated_dir.glob("pncp_contratos_*_consolidated.parquet"):
+            # Extrair ano-mês do nome do arquivo consolidado
+            filename = consolidated_file.stem
+            # Formato: pncp_contratos_YYYYMM_consolidated
+            date_part = filename.replace("pncp_contratos_", "").replace("_consolidated", "")
+            try:
+                year = int(date_part[:4])
+                month = int(date_part[4:6])
+                month_key = f"{year}-{month:02d}"
+                
+                # Se há arquivos diários para o mesmo mês, incluir o consolidado
+                if month_key in monthly_groups and monthly_groups[month_key]['daily_files']:
+                    monthly_groups[month_key]['consolidated_file'] = consolidated_file
+                    self.logger.info(f"Encontrado arquivo consolidado existente para {month_key}: {consolidated_file.name}")
+                    
+            except (ValueError, IndexError):
+                continue
+        
+        # Filtrar apenas meses que têm arquivos para consolidar
+        months_to_process = {k: v for k, v in monthly_groups.items() 
+                           if v['daily_files'] or (v['consolidated_file'] and v['daily_files'])}
+        
+        if not months_to_process:
+            self.logger.info("Nenhum mês elegível para consolidação encontrado")
             return
         
-        self.logger.info(f"Encontrados {len(files_to_consolidate)} arquivos para consolidar")
+        total_daily_files = sum(len(v['daily_files']) for v in months_to_process.values())
+        self.logger.info(f"Encontrados {total_daily_files} arquivos diários para consolidar em {len(months_to_process)} meses")
         
         # Consolidar por mês
-        for month_key, files in monthly_groups.items():
-            if not files:
+        for month_key, month_data in months_to_process.items():
+            daily_files = month_data['daily_files']
+            existing_consolidated = month_data['consolidated_file']
+            
+            if not daily_files:
                 continue
                 
             try:
-                self.logger.info(f"Consolidando {len(files)} arquivos do mês {month_key}")
+                files_count = len(daily_files)
+                if existing_consolidated:
+                    files_count += 1
+                    self.logger.info(f"Consolidando {len(daily_files)} arquivos diários + 1 arquivo consolidado existente do mês {month_key}")
+                else:
+                    self.logger.info(f"Consolidando {len(daily_files)} arquivos diários do mês {month_key}")
                 
                 # Ler todos os arquivos do mês
                 monthly_data = []
-                for file_path in files:
-                    df = pd.read_parquet(file_path)
-                    monthly_data.append(df)
+                
+                # Incluir arquivo consolidado existente se houver
+                if existing_consolidated:
+                    try:
+                        existing_df = pd.read_parquet(existing_consolidated)
+                        monthly_data.append(existing_df)
+                        self.logger.debug(f"Incluído consolidado existente: {len(existing_df)} registros")
+                    except Exception as e:
+                        self.logger.error(f"Erro ao ler arquivo consolidado existente {existing_consolidated}: {e}")
+                
+                # Incluir arquivos diários
+                for file_path in daily_files:
+                    try:
+                        df = pd.read_parquet(file_path)
+                        monthly_data.append(df)
+                        self.logger.debug(f"Incluído arquivo diário {file_path.name}: {len(df)} registros")
+                    except Exception as e:
+                        self.logger.error(f"Erro ao ler arquivo diário {file_path}: {e}")
                 
                 if monthly_data:
                     # Combinar todos os dataframes
                     consolidated_df = pd.concat(monthly_data, ignore_index=True)
+                    
+                    # Remover duplicatas se houver (baseado em todas as colunas exceto extraction_date)
+                    columns_for_dedup = [col for col in consolidated_df.columns if col not in ['extraction_date', 'data_publicacao']]
+                    if columns_for_dedup:
+                        initial_count = len(consolidated_df)
+                        consolidated_df = consolidated_df.drop_duplicates(subset=columns_for_dedup, keep='last')
+                        final_count = len(consolidated_df)
+                        if initial_count != final_count:
+                            self.logger.info(f"Removidas {initial_count - final_count} linhas duplicadas")
                     
                     # Salvar arquivo consolidado
                     consolidated_filename = f"pncp_contratos_{month_key.replace('-', '')}_consolidated.parquet"
                     consolidated_path = consolidated_dir / consolidated_filename
                     consolidated_df.to_parquet(consolidated_path, index=False)
                     
-                    self.logger.info(f"Arquivo consolidado criado: {consolidated_path} ({len(consolidated_df)} registros)")
+                    self.logger.info(f"Arquivo consolidado atualizado: {consolidated_path} ({len(consolidated_df)} registros)")
+                    
+                    # Remover arquivo consolidado antigo se existia
+                    if existing_consolidated and existing_consolidated != consolidated_path:
+                        try:
+                            existing_consolidated.unlink()
+                            self.logger.debug(f"Arquivo consolidado antigo removido: {existing_consolidated}")
+                        except Exception as e:
+                            self.logger.error(f"Erro ao remover arquivo consolidado antigo: {e}")
                     
                     # Remover arquivos diários originais
-                    for file_path in files:
-                        file_path.unlink()
-                        self.logger.debug(f"Arquivo removido: {file_path}")
+                    for file_path in daily_files:
+                        try:
+                            file_path.unlink()
+                            self.logger.debug(f"Arquivo diário removido: {file_path}")
+                        except Exception as e:
+                            self.logger.error(f"Erro ao remover arquivo diário {file_path}: {e}")
                     
                     # Remover diretórios vazios
-                    for file_path in files:
-                        parent_dir = file_path.parent
-                        if parent_dir.exists() and not any(parent_dir.iterdir()):
-                            parent_dir.rmdir()
-                            self.logger.debug(f"Diretório vazio removido: {parent_dir}")
+                    for file_path in daily_files:
+                        try:
+                            parent_dir = file_path.parent
+                            if parent_dir.exists() and not any(parent_dir.iterdir()):
+                                parent_dir.rmdir()
+                                self.logger.debug(f"Diretório vazio removido: {parent_dir}")
+                        except Exception as e:
+                            self.logger.debug(f"Erro ao remover diretório vazio {parent_dir}: {e}")
                 
             except Exception as e:
                 self.logger.error(f"Erro ao consolidar arquivos do mês {month_key}: {e}")
