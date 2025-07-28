@@ -618,29 +618,26 @@ class PNCPContractionsExtractor:
                     # Combinar todos os dataframes
                     consolidated_df = pd.concat(monthly_data, ignore_index=True)
                     
-                    # Remover duplicatas baseado em colunas hashable (evitar colunas com dict/list)
-                    hashable_columns = []
-                    for col in consolidated_df.columns:
-                        if col not in ['extraction_date', 'data_publicacao']:
-                            try:
-                                # Testar se a coluna é hashable
-                                sample_value = consolidated_df[col].iloc[0] if len(consolidated_df) > 0 else None
-                                if sample_value is not None:
-                                    hash(sample_value)
-                                hashable_columns.append(col)
-                            except (TypeError, AttributeError):
-                                # Coluna não é hashable (dict, list, etc.) - pular
-                                self.logger.debug(f"Coluna {col} pulada na remoção de duplicatas (não hashable)")
-                                continue
-                    
-                    if hashable_columns:
-                        initial_count = len(consolidated_df)
-                        consolidated_df = consolidated_df.drop_duplicates(subset=hashable_columns, keep='last')
-                        final_count = len(consolidated_df)
-                        if initial_count != final_count:
-                            self.logger.info(f"Removidas {initial_count - final_count} linhas duplicadas")
-                    else:
-                        self.logger.warning("Nenhuma coluna hashable encontrada para remoção de duplicatas")
+                    # Remover duplicatas de forma segura
+                    try:
+                        # Tentar remoção usando colunas principais (mais seguras)
+                        safe_columns = ['sequencialContratacao', 'numeroContratacao', 'codigoUnidadeOrgao', 
+                                      'dataPublicacao', 'objetoContrato']
+                        
+                        # Verificar quais colunas existem no DataFrame
+                        existing_safe_columns = [col for col in safe_columns if col in consolidated_df.columns]
+                        
+                        if existing_safe_columns:
+                            initial_count = len(consolidated_df)
+                            consolidated_df = consolidated_df.drop_duplicates(subset=existing_safe_columns, keep='last')
+                            final_count = len(consolidated_df)
+                            if initial_count != final_count:
+                                self.logger.info(f"Removidas {initial_count - final_count} linhas duplicadas usando colunas: {existing_safe_columns}")
+                        else:
+                            self.logger.info("Remoção de duplicatas pulada - colunas seguras não encontradas")
+                    except Exception as e:
+                        self.logger.warning(f"Erro na remoção de duplicatas: {e}. Prosseguindo sem remoção.")
+                        # Continua sem remoção de duplicatas se houver qualquer problema
                     
                     # Salvar arquivo consolidado
                     consolidated_filename = f"pncp_contratos_{month_key.replace('-', '')}_consolidated.parquet"
