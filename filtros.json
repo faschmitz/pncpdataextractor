@@ -1,238 +1,323 @@
 {
   "ACESSORIOS CELULAR": [
+    "bateria sem fio",
+    "cabo celular",
     "carregador celular",
-    "fonte celular",
-    "cabo usb",
-    "capa de celular",
-    "película",
-    "power bank"
+    "kit carreg/cabo"
+  ],
+  "ACESSORIOS DE MESA": [
+    "organizador de mesa",
+    "porta canetas",
+    "umidificador"
   ],
   "ACESSORIOS INFORMAT": [
-    "mouse",
-    "teclado",
-    "hub usb",
-    "webcam",
-    "cabo hdmi",
-    "pen drive"
+    "adaptador",
+    "apoio de pulso",
+    "cabo",
+    "combo teclado e mouse",
+    "filtro de linha",
+    "fone de ouvido",
+    "headphone",
+    "headset",
+    "hub",
+    "microfone",
+    "mouse gamer",
+    "mouse optico",
+    "mouse pad",
+    "mouse sem fio",
+    "mouse usb",
+    "soundbar",
+    "suporte cooler",
+    "suporte para notebook",
+    "teclado gamer",
+    "teclado iluminado",
+    "teclado mini",
+    "teclado office/padrao",
+    "webcam"
+  ],
+  "ADAPTADOR DE LÁPIS": [
+    "adaptador de lápis com encaixe"
   ],
   "ALFINETE": [
-    "alfinete metálico",
-    "alfinete de costura",
-    "alfinete joaninha"
+    "alfinete mapa",
+    "percevejo"
+  ],
+  "APAGADOR": [
+    "apagador quadro branco"
   ],
   "APONTADOR": [
-    "apontador escolar",
-    "apontador com depósito",
-    "apontador de lápis"
+    "apontador bloco",
+    "apontador c/ depósito e borracha",
+    "apontador duplo",
+    "apontador metalico",
+    "apontador mini",
+    "apontador new simple",
+    "apontador redondo",
+    "apontador retangular",
+    "apontador simples c deposito",
+    "apontador temático"
   ],
   "AUDIO": [
-    "caixa de som",
-    "microfone",
-    "headset",
-    "alto-falante"
+    "caixa de som"
   ],
-  "AVENTAL": [],
-  "BLOCO DE COLORIR": [
-    "bloco de anotações",
-    "bloco post-it",
-    "bloco espiral"
+  "AVENTAL": [
+    "avental infantil"
   ],
   "BLOCOS ADESIVOS": [
-    "bloco de anotações",
-    "bloco post-it",
-    "bloco espiral"
-  ],
-  "BLOCOS DE MONTAR": [
-    "bloco de anotações",
-    "bloco post-it",
-    "bloco espiral"
+    "bloco adesivo colorido",
+    "bloco adesivo com estampa",
+    "bloco adesivo cores neutras",
+    "bloco adesivo neon",
+    "bloco adesivo transparente",
+    "index film"
   ],
   "BORRACHA": [
-    "borracha escolar",
     "borracha branca",
-    "borracha macia"
+    "borracha c/ aroma",
+    "borracha c/capa",
+    "borracha colorida",
+    "borracha decorada/formas",
+    "borracha ponteira",
+    "borracha tubinho"
   ],
-  "BRINQUEDO EDUCATIVO": [],
-  "CADERNO": [],
-  "CALCULADORAS": [],
-  "CANETAS": [
-    "caneta azul",
-    "caneta preta",
+  "BOTAO MAGNETICO": [
+    "botao magnetico"
+  ],
+  "BRINQUEDO EDUCATIVO": [
+    "bloco de colorir",
+    "carimbo",
+    "jogo da memória",
+    "jogo pop it",
+    "livro colorir/kit de pintura",
+    "mordedor sensorial",
+    "quadro eletrostático",
+    "quebra-cabeça",
+    "régua de altura"
+  ],
+  "CADERNO": [
+    "caderno 40f",
+    "caderno capa dura",
+    "caderno outros",
+    "divisorias caderno",
+    "refil",
+    "sketch board"
+  ],
+  "CALCULADORAS": [
+    "calculadora 12 dígitos",
+    "calculadora 8 dígitos",
+    "calculadora científica"
+  ],
+  "CANETAS DIVERSAS": [
+    "caneta apagável",
+    "caneta esferográfica",
     "caneta gel",
-    "marca texto"
+    "caneta premium",
+    "kit caneta/lapiseira"
   ],
-  "CARIMBO": [
-    "carimbo datador",
-    "carimbo autoentintado",
-    "almofada carimbo"
+  "CLIPS": [
+    "clipes decorados",
+    "clips galvanizado",
+    "clips niquelado"
   ],
-  "COLA": [
+  "COLA ESCOLAR": [
+    "cola bastao",
     "cola branca",
-    "cola bastão",
-    "cola líquida",
-    "cola silicone"
+    "cola colorida",
+    "cola com brilho",
+    "cola gel"
   ],
-  "COLA SILICONE/INST": [
-    "cola branca",
-    "cola bastão",
-    "cola líquida",
+  "COLA OFFICE": [
+    "cola em fita",
+    "cola instantanea",
+    "cola quente",
     "cola silicone"
-  ],
-  "COMPASSO": [
-    "compasso escolar",
-    "compasso metálico"
   ],
   "CORRETIVOS": [
-    "corretivo líquido",
-    "corretivo em fita"
+    "corretivo caneta",
+    "corretivo fita",
+    "corretivo liquido"
   ],
-  "ENVELOPE": [
-    "envelope ofício",
-    "envelope pardo"
+  "ESTECAS": [
+    "estecas modeladoras"
   ],
   "ESTILETES": [
-    "estilete pequeno",
-    "estilete de precisão"
+    "estilete bisturi",
+    "estilete emborrachado",
+    "estilete metal",
+    "estilete plastico",
+    "estilete rotativo",
+    "lamina estilete"
   ],
   "ESTOJO": [
-    "estojo escolar",
-    "estojo com zíper"
+    "estojo c/ divisoria",
+    "estojo cx leite",
+    "estojo estampa",
+    "estojo liso",
+    "estojo retangular",
+    "estojo triangular",
+    "estojo tubo"
+  ],
+  "ETIQUETA": [
+    "etiqueta de preco"
   ],
   "EVA": [
-    "folha de EVA",
-    "eva colorido"
+    "furador artesanato",
+    "placa eva atoalhado",
+    "placa eva brilho",
+    "placa eva color",
+    "placa eva estampado",
+    "placa eva furta cor",
+    "placa eva glitter"
   ],
-  "FURADOR DE EVA": [
-    "folha de EVA",
-    "eva colorido"
+  "FITA ADESIVA": [
+    "suporte fita adesiva"
   ],
   "GARRAFAS": [
-    "garrafa infantil",
-    "garrafa squeeze"
+    "garrafa inox",
+    "garrafa plástica",
+    "garrafa térmica",
+    "kit lanche"
   ],
   "GIZ": [
-    "giz escolar",
-    "giz de cera",
-    "giz branco"
+    "giz de cera 10 cores",
+    "giz de cera 12 cores",
+    "giz de cera 15 cores",
+    "giz de cera 20 cores",
+    "giz de cera 6 cores",
+    "giz liquido",
+    "gizao de cera"
   ],
   "GRAMPEADORES": [
-    "grampeador escolar",
-    "grampeador metálico"
-  ],
-  "GRAMPOS": [
-    "grampos 26/6",
-    "grampos para grampeador"
-  ],
-  "GUACHE": [
-    "tinta guache",
-    "pote guache"
+    "extrator de grampo",
+    "grampeador metal",
+    "grampeador plástico",
+    "grampo cobreado",
+    "grampo galvanizado",
+    "grampo trilho",
+    "mini grampeador"
   ],
   "HIDROCOR": [
-    "canetinha hidrocor",
-    "hidrocor escolar"
-  ],
-  "IMPRESSOS FISCAIS": [],
-  "JOGO ELETRONICO": [
-    "jogo eletrônico",
-    "jogo educativo"
-  ],
-  "KIT PINTURA": [
-    "kit escolar",
-    "kit lápis",
-    "kit pintura"
+    "hidrocor 10 cores",
+    "hidrocor 12 cores",
+    "hidrocor 24 cores",
+    "hidrocor 5 cores",
+    "hidrocor 6 cores",
+    "hidrocor 8 cores",
+    "hidrocor e carimbo",
+    "hidrocor que muda de cor"
   ],
   "KITS LAPIS": [
     "kit escolar",
-    "kit lápis",
-    "kit pintura"
-  ],
-  "LANCHEIRA": [
-    "lancheira térmica",
-    "lancheira infantil"
+    "kit lapis 12 cores/lapis hb/borracha/apontador",
+    "kit lapis hb 3 pecas",
+    "kit lapis hb c/ lapis/apontador/borracha",
+    "kit lápis de cor 12 cores",
+    "kit lápis de cor 13 cores"
   ],
   "LAPIS DE COR": [
-    "lápis de cor",
-    "caixa lápis cor"
+    "lapis 100 cores",
+    "lapis 12 cores",
+    "lapis 24 cores",
+    "lapis 36 cores",
+    "lapis 48 cores",
+    "lapis 50 cores",
+    "lapis 8 cores"
   ],
   "LAPIS GRAFITE": [
-    "lápis preto",
-    "lápis hb",
-    "lapiseira"
+    "lapis grafite 2b",
+    "lapis grafite 4b",
+    "lapis grafite 6b",
+    "lapis grafite 8b",
+    "lapis hb 12 uni",
+    "lapis hb 144 uni",
+    "lapis hb 3 ou 4 uni",
+    "lapis hb 30 uni",
+    "lapis hb 36 uni",
+    "lapis hb 72 uni"
   ],
   "LAPISEIRAS": [
-    "lápis preto",
-    "lápis hb",
-    "lapiseira"
-  ],
-  "LIVRO DE COLORIR": [
-    "livro de colorir",
-    "livro educativo"
+    "lapiseira escolar",
+    "lapiseira office",
+    "mina de grafite"
   ],
   "MARCA TEXTO": [
-    "marca texto",
-    "marcador permanente",
-    "marcador quadro branco"
+    "marca texto 2 em 1",
+    "marca texto apagável",
+    "marca texto colorido",
+    "marca texto duas pontas",
+    "marca texto metálico",
+    "marca texto mini",
+    "marca texto neon"
   ],
   "MARCADORES": [
-    "marca texto",
-    "marcador permanente",
-    "marcador quadro branco"
+    "caneta detectora",
+    "dual marcador",
+    "marcador acrílico",
+    "marcador cd/retroprojetor",
+    "marcador com contorno",
+    "marcador estojo",
+    "marcador p/quadro",
+    "marcador permanente"
+  ],
+  "MARMITA": [
+    "marmita c/ talheres"
   ],
   "MASSA DE MODELAR": [
-    "massa modelar",
-    "massinha escolar"
+    "massa de modelar com peça/molde",
+    "massa de modelar sem moldes",
+    "massinha de areia"
   ],
-  "MATERIAL P/ DESENHO": [],
-  "MOCHILA": [
-    "mochila escolar",
-    "mochila infantil"
+  "MATERIAL EXPOSITOR": [
+    "necessaire",
+    "sacolas promocionais"
+  ],
+  "MATERIAL P/ DESENHO": [
+    "aquarela",
+    "compasso",
+    "escalímetro",
+    "guache",
+    "jogo geometrico",
+    "pincel",
+    "régua"
   ],
   "MOCHILA / LANCHEIRA": [
-    "lancheira térmica",
-    "lancheira infantil"
+    "lancheira",
+    "mochila"
   ],
-  "PAPEL FOTOGRAFICO": [
-    "papel fotográfico",
-    "papel brilhante"
+  "PAPEL": [
+    "papel foto"
   ],
-  "PASTA": [
-    "pasta catálogo",
-    "pasta sanfonada"
+  "PASTAS": [
+    "pasta kraft",
+    "pasta plastica"
   ],
   "PERFURADORES": [
-    "furador de papel",
-    "furador decorativo"
-  ],
-  "PINCEL ESCOLAR PELO": [
-    "cola branca",
-    "cola bastão",
-    "cola líquida",
-    "cola silicone"
+    "perfurador metal",
+    "perfurador soft touch"
   ],
   "PLASTICO ADESIVO": [
     "plástico adesivo",
-    "plástico protetor"
-  ],
-  "PORTA OBJETOS": [
-    "porta lápis",
-    "porta objetos de mesa"
+    "washi tape"
   ],
   "PRENDEDOR BINDER": [
-    "prendedor tipo binder",
-    "clipe metálico"
+    "binder  estampado",
+    "kit prendedores",
+    "prendedor metal binder"
   ],
-  "QUEBRA-CABEçA": [],
-  "REVENDA": [],
-  "SUPORTE FITA ADESIVA": [
-    "suporte fita adesiva",
-    "dispensador de fita"
+  "REV - ENVELOPE": [
+    "envelope comercial"
+  ],
+  "REV - IMPRESSOS FISCAIS": [
+    "pedido medio"
+  ],
+  "REV - PASTAS": [
+    "pasta aba elastico",
+    "pasta catalogo"
   ],
   "TESOURA": [
+    "tesoura de picotar",
     "tesoura escolar",
-    "tesoura sem ponta"
-  ],
-  "UMIDIFICADOR": [
-    "umidificador de ar",
-    "umidificador portátil"
+    "tesoura escritorio",
+    "tesoura multiuso"
   ]
 }

@@ -59,3 +59,9 @@ tmp/
 
 # Configurações locais (opcional - descomente se quiser)
 # config.json
+
+# Credenciais e configurações sensíveis
+.env
+.env.local
+.env.production
+*.key

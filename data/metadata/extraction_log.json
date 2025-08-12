@@ -13918,6 +13918,533 @@
           ]
         ]
       }
+    },
+    {
+      "date": "2025-03-25",
+      "timestamp": "2025-08-06T07:38:59.684505",
+      "records": 33,
+      "filepath": "data/year=2025/month=03/pncp_contratos_20250325.parquet",
+      "filter_stats": {
+        "total_analisados": 6325,
+        "etapa1_aprovados": 68,
+        "etapa1_rejeitados": 6257,
+        "etapa2_aprovados": 33,
+        "etapa2_rejeitados": 35,
+        "filtrados_aprovados": 33,
+        "filtrados_rejeitados": 6292,
+        "matches_por_grupo": {
+          "UMIDIFICADOR": 2,
+          "MARCADORES": 1,
+          "MOCHILA": 2,
+          "ESTILETES": 1,
+          "GARRAFAS": 5,
+          "AVENTAL": 2,
+          "KIT PINTURA": 1,
+          "ACESSORIOS INFORMAT": 4,
+          "AUDIO": 21,
+          "CORRETIVOS": 1,
+          "COLA": 3,
+          "TESOURA": 1,
+          "ACESSORIOS CELULAR": 2,
+          "ESTOJO": 3,
+          "PASTA": 5,
+          "CARIMBO": 3,
+          "BORRACHA": 3,
+          "EVA": 4,
+          "CANETAS": 2,
+          "CADERNO": 2
+        },
+        "matches_por_termo": {
+          "UMIDIFICADOR": 2,
+          "MARCADORES": 1,
+          "MOCHILA": 2,
+          "ESTILETES": 1,
+          "GARRAFAS": 5,
+          "AVENTAL": 2,
+          "kit escolar": 1,
+          "mouse": 3,
+          "AUDIO": 11,
+          "CORRETIVOS": 1,
+          "microfone": 9,
+          "COLA": 3,
+          "TESOURA": 1,
+          "teclado": 1,
+          "película": 2,
+          "ESTOJO": 3,
+          "PASTA": 5,
+          "CARIMBO": 3,
+          "BORRACHA": 3,
+          "EVA": 4,
+          "CANETAS": 2,
+          "caixa de som": 1,
+          "CADERNO": 2
+        },
+        "llm_economizados": 6257,
+        "taxa_aprovacao_final_percent": 0.52,
+        "taxa_etapa1_aprovacao_percent": 1.08,
+        "taxa_economia_llm_percent": 98.92,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "AUDIO",
+            21
+          ],
+          [
+            "GARRAFAS",
+            5
+          ],
+          [
+            "PASTA",
+            5
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            4
+          ],
+          [
+            "EVA",
+            4
+          ],
+          [
+            "COLA",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ],
+          [
+            "CARIMBO",
+            3
+          ],
+          [
+            "BORRACHA",
+            3
+          ],
+          [
+            "UMIDIFICADOR",
+            2
+          ]
+        ],
+        "top_termos": [
+          [
+            "AUDIO",
+            11
+          ],
+          [
+            "microfone",
+            9
+          ],
+          [
+            "GARRAFAS",
+            5
+          ],
+          [
+            "PASTA",
+            5
+          ],
+          [
+            "EVA",
+            4
+          ],
+          [
+            "mouse",
+            3
+          ],
+          [
+            "COLA",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ],
+          [
+            "CARIMBO",
+            3
+          ],
+          [
+            "BORRACHA",
+            3
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 67,
+          "aprovados": 33,
+          "rejeitados": 34,
+          "approval_rate_percent": 49.25,
+          "cache_hits": 1,
+          "cache_misses": 67,
+          "cache_hit_rate_percent": 1.47,
+          "total_tokens": 44758,
+          "avg_tokens_per_query": 668.03,
+          "total_cost_usd": 0.0713,
+          "avg_cost_per_query": 0.0011,
+          "avg_response_time_seconds": 1.461,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 67
+        }
+      }
+    },
+    {
+      "date": "2025-03-26",
+      "timestamp": "2025-08-06T07:43:58.707680",
+      "records": 35,
+      "filepath": "data/year=2025/month=03/pncp_contratos_20250326.parquet",
+      "filter_stats": {
+        "total_analisados": 12775,
+        "etapa1_aprovados": 135,
+        "etapa1_rejeitados": 12640,
+        "etapa2_aprovados": 68,
+        "etapa2_rejeitados": 67,
+        "filtrados_aprovados": 68,
+        "filtrados_rejeitados": 12707,
+        "matches_por_grupo": {
+          "UMIDIFICADOR": 3,
+          "MARCADORES": 1,
+          "MOCHILA": 2,
+          "ESTILETES": 1,
+          "GARRAFAS": 8,
+          "AVENTAL": 3,
+          "KIT PINTURA": 1,
+          "ACESSORIOS INFORMAT": 10,
+          "AUDIO": 36,
+          "CORRETIVOS": 2,
+          "COLA": 7,
+          "TESOURA": 2,
+          "ACESSORIOS CELULAR": 9,
+          "ESTOJO": 3,
+          "PASTA": 12,
+          "CARIMBO": 6,
+          "BORRACHA": 8,
+          "EVA": 5,
+          "CANETAS": 5,
+          "CADERNO": 3,
+          "GRAMPEADORES": 1,
+          "ENVELOPE": 3,
+          "QUEBRA-CABEçA": 1,
+          "PINCEL ESCOLAR PELO": 2,
+          "MARCA TEXTO": 1
+        },
+        "matches_por_termo": {
+          "UMIDIFICADOR": 3,
+          "MARCADORES": 1,
+          "MOCHILA": 2,
+          "ESTILETES": 1,
+          "GARRAFAS": 8,
+          "AVENTAL": 3,
+          "kit escolar": 1,
+          "mouse": 7,
+          "AUDIO": 18,
+          "CORRETIVOS": 2,
+          "microfone": 16,
+          "COLA": 7,
+          "TESOURA": 2,
+          "teclado": 2,
+          "película": 8,
+          "ESTOJO": 3,
+          "PASTA": 12,
+          "CARIMBO": 6,
+          "BORRACHA": 8,
+          "EVA": 5,
+          "CANETAS": 5,
+          "caixa de som": 1,
+          "CADERNO": 3,
+          "GRAMPEADORES": 1,
+          "headset": 1,
+          "pen drive": 1,
+          "ENVELOPE": 3,
+          "QUEBRA-CABEçA": 1,
+          "power bank": 1,
+          "cola bastão": 2,
+          "MARCA TEXTO": 1
+        },
+        "llm_economizados": 12640,
+        "taxa_aprovacao_final_percent": 0.53,
+        "taxa_etapa1_aprovacao_percent": 1.06,
+        "taxa_economia_llm_percent": 98.94,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "AUDIO",
+            36
+          ],
+          [
+            "PASTA",
+            12
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            10
+          ],
+          [
+            "ACESSORIOS CELULAR",
+            9
+          ],
+          [
+            "GARRAFAS",
+            8
+          ],
+          [
+            "BORRACHA",
+            8
+          ],
+          [
+            "COLA",
+            7
+          ],
+          [
+            "CARIMBO",
+            6
+          ],
+          [
+            "EVA",
+            5
+          ],
+          [
+            "CANETAS",
+            5
+          ]
+        ],
+        "top_termos": [
+          [
+            "AUDIO",
+            18
+          ],
+          [
+            "microfone",
+            16
+          ],
+          [
+            "PASTA",
+            12
+          ],
+          [
+            "GARRAFAS",
+            8
+          ],
+          [
+            "película",
+            8
+          ],
+          [
+            "BORRACHA",
+            8
+          ],
+          [
+            "mouse",
+            7
+          ],
+          [
+            "COLA",
+            7
+          ],
+          [
+            "CARIMBO",
+            6
+          ],
+          [
+            "EVA",
+            5
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 134,
+          "aprovados": 68,
+          "rejeitados": 66,
+          "approval_rate_percent": 50.75,
+          "cache_hits": 1,
+          "cache_misses": 134,
+          "cache_hit_rate_percent": 0.74,
+          "total_tokens": 89005,
+          "avg_tokens_per_query": 664.22,
+          "total_cost_usd": 0.1416,
+          "avg_cost_per_query": 0.0011,
+          "avg_response_time_seconds": 2.474,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 134
+        }
+      }
+    },
+    {
+      "date": "2025-07-01",
+      "timestamp": "2025-08-06T09:38:24.520368",
+      "records": 61,
+      "filepath": "data/year=2025/month=07/pncp_contratos_20250701.parquet",
+      "filter_stats": {
+        "total_analisados": 6252,
+        "etapa1_aprovados": 113,
+        "etapa1_rejeitados": 6139,
+        "etapa2_aprovados": 61,
+        "etapa2_rejeitados": 52,
+        "filtrados_aprovados": 61,
+        "filtrados_rejeitados": 6191,
+        "matches_por_grupo": {
+          "PAPEL": 35,
+          "ACESSORIOS INFORMAT": 21,
+          "AUDIO": 7,
+          "ESTOJO": 3,
+          "GRAMPEADORES": 2,
+          "MARMITA": 2,
+          "APAGADOR": 1,
+          "BORRACHA": 5,
+          "GARRAFAS": 8,
+          "PASTAS": 7,
+          "TESOURA": 2,
+          "MOCHILA / LANCHEIRA": 1,
+          "CADERNO": 5,
+          "ETIQUETA": 4,
+          "FITA ADESIVA": 2,
+          "PERFURADORES": 1,
+          "BRINQUEDO EDUCATIVO": 2,
+          "MATERIAL P/ DESENHO": 2,
+          "ACESSORIOS DE MESA": 1,
+          "GIZ": 1,
+          "EVA": 1
+        },
+        "matches_por_termo": {
+          "PAPEL": 35,
+          "adaptador": 2,
+          "AUDIO": 5,
+          "cabo": 13,
+          "ESTOJO": 3,
+          "GRAMPEADORES": 1,
+          "MARMITA": 2,
+          "APAGADOR": 1,
+          "BORRACHA": 5,
+          "kit lanche": 2,
+          "PASTAS": 7,
+          "TESOURA": 2,
+          "mochila": 1,
+          "refil": 4,
+          "microfone": 4,
+          "ETIQUETA": 4,
+          "FITA ADESIVA": 2,
+          "GARRAFAS": 5,
+          "PERFURADORES": 1,
+          "quebra-cabeça": 1,
+          "webcam": 1,
+          "hub": 1,
+          "pincel": 1,
+          "grampo trilho": 1,
+          "garrafa térmica": 1,
+          "régua": 1,
+          "caixa de som": 2,
+          "carimbo": 1,
+          "CADERNO": 1,
+          "umidificador": 1,
+          "GIZ": 1,
+          "EVA": 1
+        },
+        "llm_economizados": 6139,
+        "taxa_aprovacao_final_percent": 0.98,
+        "taxa_etapa1_aprovacao_percent": 1.81,
+        "taxa_economia_llm_percent": 98.19,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            21
+          ],
+          [
+            "GARRAFAS",
+            8
+          ],
+          [
+            "AUDIO",
+            7
+          ],
+          [
+            "PASTAS",
+            7
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "CADERNO",
+            5
+          ],
+          [
+            "ETIQUETA",
+            4
+          ],
+          [
+            "ESTOJO",
+            3
+          ],
+          [
+            "GRAMPEADORES",
+            2
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "cabo",
+            13
+          ],
+          [
+            "PASTAS",
+            7
+          ],
+          [
+            "AUDIO",
+            5
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "GARRAFAS",
+            5
+          ],
+          [
+            "refil",
+            4
+          ],
+          [
+            "microfone",
+            4
+          ],
+          [
+            "ETIQUETA",
+            4
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 113,
+          "aprovados": 61,
+          "rejeitados": 52,
+          "approval_rate_percent": 53.98,
+          "cache_hits": 0,
+          "cache_misses": 113,
+          "cache_hit_rate_percent": 0.0,
+          "total_tokens": 67266,
+          "avg_tokens_per_query": 595.27,
+          "total_cost_usd": 0.109,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.92,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 113
+        }
+      }
     }
   ]
 }

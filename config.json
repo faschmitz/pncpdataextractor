@@ -33,5 +33,12 @@
   "filtro_ativo": true,
   "filtro_threshold": 0.85,
   "filtro_log_matches": true,
-  "filtros_file": "filtros.json"
+  "filtros_file": "filtros.json",
+  "llm_filtro_ativo": true,
+  "llm_model": "gpt-3.5-turbo",
+  "llm_max_tokens": 500,
+  "llm_temperature": 0.1,
+  "llm_max_requests_per_minute": 60,
+  "llm_delay_between_requests": 1.0,
+  "cache_ttl_hours": 24
 }
