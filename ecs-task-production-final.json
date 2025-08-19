@@ -1,0 +1,51 @@
+{
+  "family": "pncp-extractor-production-final",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::566387937580:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "pncp-extractor-optimized",
+      "image": "566387937580.dkr.ecr.us-east-2.amazonaws.com/pncp-extractor:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/pncp-extractor",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "production-final"
+        }
+      },
+      "environment": [
+        {
+          "name": "AWS_DEFAULT_REGION",
+          "value": "us-east-2"
+        },
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": "[CONFIGURED_IN_ECS_TASK]"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": "[CONFIGURED_IN_ECS_TASK]"
+        },
+        {
+          "name": "S3_BUCKET",
+          "value": "pncp-extractor-data-prod-566387937580"
+        },
+        {
+          "name": "EXECUTION_TYPE",
+          "value": "PRODUCTION_DAILY_OPTIMIZED"
+        }
+      ],
+      "command": [
+        "/bin/sh",
+        "-c",
+        "echo '🚀 Iniciando extração PNCP otimizada...' && python3 /app/extractor.py --production && echo '✅ Extração completa! Dados disponíveis via Athena em raw-data/year=2025/month=XX/' && echo '📊 Consulte via: SELECT COUNT(*) FROM pncp_data.contratos WHERE year=2025'"
+      ],
+      "workingDirectory": "/app"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "pncp-daily-extraction",
+  "Description": "Execução diária da extração incremental PNCP",
+  "ScheduleExpression": "cron(0 6 * * ? *)",
+  "State": "ENABLED",
+  "Target": {
+    "Arn": "arn:aws:ecs:us-east-2:566387937580:cluster/pncp-extractor-cluster",
+    "RoleArn": "arn:aws:iam::566387937580:role/service-role/Amazon_EventBridge_Scheduler_ECS_ROLE",
+    "EcsParameters": {
+      "TaskDefinitionArn": "arn:aws:ecs:us-east-2:566387937580:task-definition/pncp-extractor-production:1",
+      "LaunchType": "FARGATE",
+      "NetworkConfiguration": {
+        "awsvpcConfiguration": {
+          "Subnets": ["subnet-0c84cbb5a38a0c2ea", "subnet-0a88b87c7fdeefeea"],
+          "SecurityGroups": ["sg-0b2f3c9d7e8a1c4f5"],
+          "AssignPublicIp": "ENABLED"
+        }
+      },
+      "PlatformVersion": "LATEST"
+    }
+  },
+  "FlexibleTimeWindow": {
+    "Mode": "FLEXIBLE",
+    "MaximumWindowInMinutes": 30
+  }
+}

@@ -1,0 +1,333 @@
+name: CI/CD Pipeline - PNCP Data Extractor
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  
+  # Permitir execução manual
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'prod'
+        type: choice
+        options:
+        - prod
+        - staging
+      deploy_infrastructure:
+        description: 'Deploy infrastructure changes'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  # AWS Configuration
+  AWS_REGION: us-east-2
+  ECR_REPOSITORY: pncp-extractor
+  
+  # Application Configuration
+  PYTHON_VERSION: '3.12'
+  NODE_VERSION: '18'
+
+jobs:
+  # Job 1: Testes e validação
+  test:
+    name: Tests and Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov flake8 black mypy
+        
+    - name: Lint with flake8
+      run: |
+        # Parar build se houver erros de sintaxe ou nomes indefinidos
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Avisos para outras questões
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
+        
+    - name: Format check with Black
+      run: |
+        black --check --diff .
+        
+    - name: Type check with MyPy
+      run: |
+        mypy --ignore-missing-imports extractor.py storage_manager.py aws_config.py
+        
+    - name: Test with pytest
+      run: |
+        pytest --cov=. --cov-report=xml --cov-report=term-missing
+        
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
+        fail_ci_if_error: false
+
+  # Job 2: Build e push da imagem Docker
+  build:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    
+    outputs:
+      image-tag: ${{ steps.build-image.outputs.image-tag }}
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build and push Docker image
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      run: |
+        # Gerar tag baseada no commit SHA e timestamp
+        IMAGE_TAG=${GITHUB_SHA::8}-$(date +%s)
+        
+        # Build da imagem
+        docker buildx build \
+          --platform linux/amd64 \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+          --tag $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+          --push \
+          .
+          
+        echo "image-tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
+        echo "Built and pushed image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        
+    - name: Run security scan on image
+      run: |
+        # Instalar e executar Trivy para scan de segurança
+        sudo apt-get update && sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+        echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update && sudo apt-get install -y trivy
+        
+        # Scan da imagem
+        trivy image --exit-code 1 --severity HIGH,CRITICAL ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:${{ steps.build-image.outputs.image-tag }}
+
+  # Job 3: Deploy da infraestrutura
+  deploy-infrastructure:
+    name: Deploy Infrastructure
+    runs-on: ubuntu-latest
+    needs: [test, build]
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') || 
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_infrastructure == 'true')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Install AWS CDK
+      run: |
+        npm install -g aws-cdk@latest
+        
+    - name: Install Python dependencies for CDK
+      run: |
+        cd infrastructure
+        pip install -r requirements.txt
+        
+    - name: CDK Bootstrap (if needed)
+      run: |
+        cd infrastructure
+        cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ env.AWS_REGION }}
+        
+    - name: CDK Diff
+      run: |
+        cd infrastructure
+        cdk diff --all
+        
+    - name: CDK Deploy
+      run: |
+        cd infrastructure
+        cdk deploy --all --require-approval never
+        
+    - name: Save deployment outputs
+      run: |
+        cd infrastructure
+        cdk ls > cdk-stacks.txt
+        echo "Deployed stacks:" 
+        cat cdk-stacks.txt
+
+  # Job 4: Update ECS service com nova imagem
+  deploy-application:
+    name: Deploy Application
+    runs-on: ubuntu-latest
+    needs: [build, deploy-infrastructure]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Update ECS Task Definition
+      run: |
+        # Obter task definition atual
+        TASK_DEF_ARN=$(aws ecs describe-task-definition \
+          --task-definition pncp-extractor-production-final \
+          --query 'taskDefinition.taskDefinitionArn' \
+          --output text)
+        
+        echo "Current task definition: $TASK_DEF_ARN"
+        
+        # Criar nova revisão com nova imagem
+        aws ecs describe-task-definition \
+          --task-definition pncp-extractor-production-final \
+          --query 'taskDefinition' > task-def.json
+          
+        # Atualizar imagem na task definition
+        IMAGE_URI=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ needs.build.outputs.image-tag }}
+        
+        # Usar jq para atualizar a imagem
+        jq --arg IMAGE "$IMAGE_URI" '.containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy)' task-def.json > new-task-def.json
+        
+        # Registrar nova task definition
+        aws ecs register-task-definition \
+          --cli-input-json file://new-task-def.json
+          
+        echo "Updated task definition with new image: $IMAGE_URI"
+
+  # Job 5: Testes de integração pós-deploy
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: [deploy-application]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Test S3 bucket access
+      run: |
+        # Verificar se bucket existe e é acessível
+        BUCKET_NAME=$(aws s3api list-buckets --query 'Buckets[?contains(Name, `pncp-extractor-data`)].Name' --output text)
+        
+        if [ -n "$BUCKET_NAME" ]; then
+          echo "✅ S3 bucket found: $BUCKET_NAME"
+          aws s3 ls s3://$BUCKET_NAME/ --recursive --human-readable --summarize
+        else
+          echo "❌ S3 bucket not found"
+          exit 1
+        fi
+        
+    - name: Test Step Functions state machine
+      run: |
+        # Verificar se state machine existe
+        STATE_MACHINE_ARN=$(aws stepfunctions list-state-machines \
+          --query 'stateMachines[?contains(name, `pncp-extractor`)].stateMachineArn' \
+          --output text)
+        
+        if [ -n "$STATE_MACHINE_ARN" ]; then
+          echo "✅ Step Functions state machine found: $STATE_MACHINE_ARN"
+          
+          # Opcionalmente, executar um teste da state machine
+          # aws stepfunctions start-execution --state-machine-arn $STATE_MACHINE_ARN --input '{"ExecutionType": "test"}'
+        else
+          echo "❌ Step Functions state machine not found"
+          exit 1
+        fi
+        
+    - name: Verify ECS cluster health
+      run: |
+        # Verificar se cluster ECS está ativo
+        CLUSTER_STATUS=$(aws ecs describe-clusters \
+          --clusters pncp-extractor-cluster \
+          --query 'clusters[0].status' \
+          --output text)
+        
+        if [ "$CLUSTER_STATUS" = "ACTIVE" ]; then
+          echo "✅ ECS cluster is active"
+        else
+          echo "❌ ECS cluster is not active: $CLUSTER_STATUS"
+          exit 1
+        fi
+
+  # Job 6: Notification
+  notify:
+    name: Notify Deployment Status
+    runs-on: ubuntu-latest
+    needs: [deploy-application, integration-tests]
+    if: always()
+    
+    steps:
+    - name: Notify success
+      if: needs.deploy-application.result == 'success' && needs.integration-tests.result == 'success'
+      run: |
+        echo "✅ Deployment successful!"
+        echo "Image tag deployed: ${{ needs.build.outputs.image-tag }}"
+        
+    - name: Notify failure
+      if: needs.deploy-application.result == 'failure' || needs.integration-tests.result == 'failure'
+      run: |
+        echo "❌ Deployment failed!"
+        echo "Check logs for details."
+        exit 1

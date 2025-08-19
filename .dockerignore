@@ -1,0 +1,61 @@
+# Arquivos de desenvolvimento
+.git/
+.github/
+.vscode/
+.idea/
+
+# Arquivos Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+
+# Dados locais (não necessários no container)
+data/
+*.log
+*.parquet
+*.csv
+
+# Arquivos de estado (serão criados no container)
+state.json
+extractor.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Documentação
+README.md
+*.md
+docs/
+
+# Arquivos de configuração local
+.env
+.env.local
+.env.*.local
+
+# Arquivos de backup
+*.backup
+*~
+
+# AWS CDK (infrastructure)
+infrastructure/
+*.js
+*.d.ts
+node_modules/
+cdk.out/
+
+# GitHub Actions
+.github/

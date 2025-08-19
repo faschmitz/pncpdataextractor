@@ -1,0 +1,60 @@
+{
+  "family": "pncp-extractor-production",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::566387937580:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::566387937580:role/pncp-extractor-task-role",
+  "containerDefinitions": [
+    {
+      "name": "pncp-extractor",
+      "image": "566387937580.dkr.ecr.us-east-2.amazonaws.com/pncp-extractor:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/pncp-extractor",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "production"
+        }
+      },
+      "environment": [
+        {
+          "name": "AWS_DEFAULT_REGION",
+          "value": "us-east-2"
+        },
+        {
+          "name": "S3_BUCKET",
+          "value": "pncp-extractor-data-prod-566387937580"
+        },
+        {
+          "name": "EXECUTION_TYPE",
+          "value": "PRODUCTION_DAILY"
+        },
+        {
+          "name": "LOG_LEVEL",
+          "value": "INFO"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "OPENAI_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:566387937580:secret:pncp-secrets:OPENAI_API_KEY::"
+        },
+        {
+          "name": "PNCP_API_KEY", 
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:566387937580:secret:pncp-secrets:PNCP_API_KEY::"
+        }
+      ],
+      "command": ["python3", "/app/extractor.py", "--production"],
+      "workingDirectory": "/app",
+      "healthCheck": {
+        "command": ["CMD-SHELL", "python3 -c \"import requests; print('OK')\" || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3
+      }
+    }
+  ]
+}

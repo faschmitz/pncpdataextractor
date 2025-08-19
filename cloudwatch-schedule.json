@@ -1,0 +1,24 @@
+{
+  "Name": "pncp-daily-extraction-cloudwatch",
+  "Description": "Execução diária da extração PNCP via CloudWatch Events",
+  "ScheduleExpression": "cron(0 6 * * ? *)",
+  "State": "ENABLED",
+  "Targets": [
+    {
+      "Id": "1",
+      "Arn": "arn:aws:ecs:us-east-2:566387937580:cluster/pncp-extractor-cluster",
+      "EcsParameters": {
+        "TaskDefinitionArn": "arn:aws:ecs:us-east-2:566387937580:task-definition/pncp-extractor-production:1",
+        "LaunchType": "FARGATE",
+        "NetworkConfiguration": {
+          "awsvpcConfiguration": {
+            "Subnets": ["subnet-01a1c4a376f9b4349", "subnet-0299a2b7527faf498"],
+            "AssignPublicIp": "ENABLED"
+          }
+        },
+        "PlatformVersion": "LATEST"
+      },
+      "RoleArn": "arn:aws:iam::566387937580:role/ecsTaskExecutionRole"
+    }
+  ]
+}

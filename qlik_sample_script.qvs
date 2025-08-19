@@ -1,0 +1,198 @@
+// ===============================================
+// QLIK SENSE - SCRIPT PNCP ATHENA
+// Conecta diretamente ao AWS Athena
+// ===============================================
+
+// Configurações regionais
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyFormat='R$ #.##0,00';
+SET TimeFormat='h:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY h:mm:ss';
+
+// ===============================================
+// 1. CONEXÃO ATHENA
+// ===============================================
+
+CONNECT TO 'lib://Amazon Athena Connection';
+
+// ===============================================
+// 2. CARGA PRINCIPAL - CONTRATOS
+// ===============================================
+
+Contratos:
+LOAD
+    // Campos principais
+    numeroContrato as [Número do Contrato],
+    objetoContrato as [Objeto do Contrato],
+    valorContrato as [Valor do Contrato],
+    
+    // Datas (convertidas)
+    DATE(DATE#(dataAssinatura, 'YYYY-MM-DD')) as [Data Assinatura],
+    DATE(DATE#(dataPublicacao, 'YYYY-MM-DD')) as [Data Publicação],
+    
+    // Identificadores
+    sequencialContratacao as [Sequencial],
+    codigoUnidadeOrgao as [Código Unidade],
+    
+    // Classificações
+    modalidadeLicitacao as [Modalidade],
+    modalidade_nome_dominio as [Nome Modalidade],
+    situacao_compra_nome_dominio as [Situação],
+    esfera_nome_dominio as [Esfera],
+    poder_nome_dominio as [Poder],
+    
+    // Filtros aplicados
+    if(filtro_aplicado = true, 'Sim', 'Não') as [Filtro Aplicado],
+    filtro_motivo as [Motivo Filtro],
+    filtro_grupo_matched as [Grupo Matched],
+    filtro_termo_matched as [Termo Matched],
+    
+    // Controle
+    extraction_date as [Data Extração],
+    year as [Ano],
+    month as [Mês]
+    
+SQL SELECT 
+    numeroContrato,
+    objetoContrato,
+    valorContrato,
+    dataAssinatura,
+    dataPublicacao,
+    sequencialContratacao,
+    codigoUnidadeOrgao,
+    modalidadeLicitacao,
+    modalidade_nome_dominio,
+    situacao_compra_nome_dominio,
+    esfera_nome_dominio,
+    poder_nome_dominio,
+    filtro_aplicado,
+    filtro_motivo,
+    filtro_grupo_matched,
+    filtro_termo_matched,
+    extraction_date,
+    year,
+    month
+FROM pncp_data.contratos
+WHERE year = 2025 AND month = 8;
+
+// ===============================================
+// 3. CALENDÁRIO
+// ===============================================
+
+TempCalendar:
+LOAD DISTINCT
+    [Data Publicação] as Date
+RESIDENT Contratos
+WHERE NOT IsNull([Data Publicação]);
+
+Calendar:
+LOAD 
+    Date,
+    Year(Date) as [Ano Publicação],
+    Month(Date) as [Mês Publicação], 
+    MonthName(Date) as [Mês Nome],
+    Day(Date) as [Dia],
+    WeekDay(Date) as [Dia Semana],
+    Week(Date) as [Semana],
+    Quarter(Date) as [Trimestre],
+    'Q' & Quarter(Date) & '-' & Year(Date) as [Trimestre Ano]
+RESIDENT TempCalendar;
+
+DROP TABLE TempCalendar;
+
+// ===============================================
+// 4. DIMENSÕES DE MODALIDADE
+// ===============================================
+
+Modalidades:
+LOAD DISTINCT
+    [Modalidade],
+    [Nome Modalidade]
+RESIDENT Contratos;
+
+// ===============================================
+// 5. DIMENSÕES DE ORGÃO
+// ===============================================
+
+Orgaos:
+LOAD DISTINCT
+    [Esfera],
+    [Poder],
+    [Código Unidade]
+RESIDENT Contratos;
+
+// ===============================================
+// 6. ANÁLISE DE TEXTO - CONTRATOS TI
+// ===============================================
+
+ContratosClassificados:
+LOAD 
+    [Número do Contrato],
+    [Objeto do Contrato],
+    
+    // Classificação automática por palavra-chave
+    if(
+        WildMatch(Upper([Objeto do Contrato]), 
+                 '*TECNOLOGIA*', '*SOFTWARE*', '*SISTEMA*', 
+                 '*INFORMAÇÃO*', '*TI*', '*DIGITAL*',
+                 '*COMPUTADOR*', '*REDE*', '*INTERNET*'), 
+        'Tecnologia da Informação',
+        if(WildMatch(Upper([Objeto do Contrato]),
+                    '*OBRA*', '*CONSTRUÇÃO*', '*REFORMA*'),
+           'Obras e Infraestrutura',
+           if(WildMatch(Upper([Objeto do Contrato]),
+                       '*SERVIÇO*', '*MANUTENÇÃO*', '*LIMPEZA*'),
+              'Serviços Gerais',
+              'Outros'))) as [Categoria Contrato]
+              
+RESIDENT Contratos;
+
+// ===============================================
+// 7. TABELA DE FATOS RESUMIDA (PARA PERFORMANCE)
+// ===============================================
+
+FatosContratos:
+LOAD
+    [Ano],
+    [Mês], 
+    [Modalidade],
+    [Categoria Contrato],
+    [Esfera],
+    Count([Número do Contrato]) as [Qtd Contratos],
+    Sum([Valor do Contrato]) as [Valor Total],
+    Avg([Valor do Contrato]) as [Valor Médio]
+RESIDENT Contratos
+GROUP BY [Ano], [Mês], [Modalidade], [Categoria Contrato], [Esfera];
+
+// ===============================================
+// 8. VARIÁVEIS PARA DASHBOARDS
+// ===============================================
+
+// KPIs principais
+LET vTotalContratos = 'Count({<[Ano]={2025}, [Mês]={8}>} [Número do Contrato])';
+LET vValorTotal = 'Sum({<[Ano]={2025}, [Mês]={8}>} [Valor do Contrato])';
+LET vValorMedio = 'Avg({<[Ano]={2025}, [Mês]={8}>} [Valor do Contrato])';
+
+// Filtros especiais
+LET vContratosTI = 'Count({<[Categoria Contrato]={''Tecnologia da Informação''}>} [Número do Contrato])';
+LET vTaxaFiltro = 'Count({<[Filtro Aplicado]={''Sim''}>} [Número do Contrato]) / Count([Número do Contrato])';
+
+// Comparações
+LET vCrescimentoMensal = 'Sum([Valor do Contrato]) / Above(Sum([Valor do Contrato]))';
+
+// ===============================================
+// 9. LIMPEZA
+// ===============================================
+
+DROP TABLE ContratosClassificados;
+
+// ===============================================
+// FIM DO SCRIPT
+// ===============================================
+
+TRACE ================================;
+TRACE CARGA PNCP ATHENA FINALIZADA;
+TRACE Total de contratos: $(vTotalContratos);
+TRACE ================================;

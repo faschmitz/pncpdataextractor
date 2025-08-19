@@ -14445,6 +14445,2950 @@
           "cache_size": 113
         }
       }
+    },
+    {
+      "date": "2025-08-01",
+      "timestamp": "2025-08-18T12:59:37.483000",
+      "records": 65,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250801.parquet",
+      "filter_stats": {
+        "total_analisados": 6044,
+        "etapa1_aprovados": 119,
+        "etapa1_rejeitados": 5925,
+        "etapa2_aprovados": 65,
+        "etapa2_rejeitados": 54,
+        "filtrados_aprovados": 65,
+        "filtrados_rejeitados": 5979,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 28,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "MATERIAL P/ DESENHO": 4,
+          "PASTAS": 9,
+          "AUDIO": 13,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "GARRAFAS": 7,
+          "CADERNO": 4,
+          "ESTOJO": 3,
+          "GRAMPEADORES": 1,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "BRINQUEDO EDUCATIVO": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 1,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "régua": 3,
+          "PASTAS": 9,
+          "pincel": 1,
+          "AUDIO": 11,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "kit lanche": 3,
+          "cabo": 16,
+          "CADERNO": 3,
+          "ESTOJO": 3,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 1,
+          "necessaire": 2,
+          "filtro de linha": 3,
+          "microfone": 3,
+          "headset": 1,
+          "caixa de som": 2,
+          "refil": 1,
+          "GARRAFAS": 3,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "garrafa térmica": 1,
+          "adaptador": 1,
+          "carimbo": 1,
+          "hub": 2
+        },
+        "llm_economizados": 5925,
+        "taxa_aprovacao_final_percent": 1.08,
+        "taxa_etapa1_aprovacao_percent": 1.97,
+        "taxa_economia_llm_percent": 98.03,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            28
+          ],
+          [
+            "AUDIO",
+            13
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "GARRAFAS",
+            7
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            4
+          ],
+          [
+            "CADERNO",
+            4
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "cabo",
+            16
+          ],
+          [
+            "AUDIO",
+            11
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "régua",
+            3
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "kit lanche",
+            3
+          ],
+          [
+            "CADERNO",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 119,
+          "aprovados": 65,
+          "rejeitados": 54,
+          "approval_rate_percent": 54.62,
+          "cache_hits": 0,
+          "cache_misses": 119,
+          "cache_hit_rate_percent": 0.0,
+          "total_tokens": 70427,
+          "avg_tokens_per_query": 591.82,
+          "total_cost_usd": 0.1141,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.149,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 119
+        }
+      }
+    },
+    {
+      "date": "2025-08-02",
+      "timestamp": "2025-08-18T13:04:29.048034",
+      "records": 2,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250802.parquet",
+      "filter_stats": {
+        "total_analisados": 6126,
+        "etapa1_aprovados": 121,
+        "etapa1_rejeitados": 6005,
+        "etapa2_aprovados": 67,
+        "etapa2_rejeitados": 54,
+        "filtrados_aprovados": 67,
+        "filtrados_rejeitados": 6059,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 29,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "MATERIAL P/ DESENHO": 4,
+          "PASTAS": 9,
+          "AUDIO": 13,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "GARRAFAS": 7,
+          "CADERNO": 4,
+          "ESTOJO": 3,
+          "GRAMPEADORES": 1,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "BRINQUEDO EDUCATIVO": 1,
+          "MARMITA": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 1,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "régua": 3,
+          "PASTAS": 9,
+          "pincel": 1,
+          "AUDIO": 11,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "kit lanche": 3,
+          "cabo": 16,
+          "CADERNO": 3,
+          "ESTOJO": 3,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 1,
+          "necessaire": 2,
+          "filtro de linha": 3,
+          "microfone": 3,
+          "headset": 1,
+          "caixa de som": 2,
+          "refil": 1,
+          "GARRAFAS": 3,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "garrafa térmica": 1,
+          "adaptador": 2,
+          "carimbo": 1,
+          "hub": 2,
+          "MARMITA": 1
+        },
+        "llm_economizados": 6005,
+        "taxa_aprovacao_final_percent": 1.09,
+        "taxa_etapa1_aprovacao_percent": 1.98,
+        "taxa_economia_llm_percent": 98.02,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            29
+          ],
+          [
+            "AUDIO",
+            13
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "GARRAFAS",
+            7
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            4
+          ],
+          [
+            "CADERNO",
+            4
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "cabo",
+            16
+          ],
+          [
+            "AUDIO",
+            11
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "régua",
+            3
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "kit lanche",
+            3
+          ],
+          [
+            "CADERNO",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 121,
+          "aprovados": 67,
+          "rejeitados": 54,
+          "approval_rate_percent": 55.37,
+          "cache_hits": 0,
+          "cache_misses": 121,
+          "cache_hit_rate_percent": 0.0,
+          "total_tokens": 71597,
+          "avg_tokens_per_query": 591.71,
+          "total_cost_usd": 0.116,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.153,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 121
+        }
+      }
+    },
+    {
+      "date": "2025-08-03",
+      "timestamp": "2025-08-18T13:08:45.635681",
+      "records": 1,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250803.parquet",
+      "filter_stats": {
+        "total_analisados": 6194,
+        "etapa1_aprovados": 122,
+        "etapa1_rejeitados": 6072,
+        "etapa2_aprovados": 68,
+        "etapa2_rejeitados": 54,
+        "filtrados_aprovados": 68,
+        "filtrados_rejeitados": 6126,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 29,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "MATERIAL P/ DESENHO": 4,
+          "PASTAS": 9,
+          "AUDIO": 14,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "GARRAFAS": 7,
+          "CADERNO": 4,
+          "ESTOJO": 3,
+          "GRAMPEADORES": 1,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "BRINQUEDO EDUCATIVO": 1,
+          "MARMITA": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 1,
+          "AVENTAL": 2,
+          "PAPEL": 35,
+          "régua": 3,
+          "PASTAS": 9,
+          "pincel": 1,
+          "AUDIO": 12,
+          "ETIQUETA": 3,
+          "BORRACHA": 5,
+          "kit lanche": 3,
+          "cabo": 16,
+          "CADERNO": 3,
+          "ESTOJO": 3,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 1,
+          "necessaire": 2,
+          "filtro de linha": 3,
+          "microfone": 3,
+          "headset": 1,
+          "caixa de som": 2,
+          "refil": 1,
+          "GARRAFAS": 3,
+          "TESOURA": 1,
+          "CORRETIVOS": 1,
+          "garrafa térmica": 1,
+          "adaptador": 2,
+          "carimbo": 1,
+          "hub": 2,
+          "MARMITA": 1
+        },
+        "llm_economizados": 6072,
+        "taxa_aprovacao_final_percent": 1.1,
+        "taxa_etapa1_aprovacao_percent": 1.97,
+        "taxa_economia_llm_percent": 98.03,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            29
+          ],
+          [
+            "AUDIO",
+            14
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "GARRAFAS",
+            7
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            4
+          ],
+          [
+            "CADERNO",
+            4
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            35
+          ],
+          [
+            "cabo",
+            16
+          ],
+          [
+            "AUDIO",
+            12
+          ],
+          [
+            "PASTAS",
+            9
+          ],
+          [
+            "BORRACHA",
+            5
+          ],
+          [
+            "régua",
+            3
+          ],
+          [
+            "ETIQUETA",
+            3
+          ],
+          [
+            "kit lanche",
+            3
+          ],
+          [
+            "CADERNO",
+            3
+          ],
+          [
+            "ESTOJO",
+            3
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 122,
+          "aprovados": 68,
+          "rejeitados": 54,
+          "approval_rate_percent": 55.74,
+          "cache_hits": 0,
+          "cache_misses": 122,
+          "cache_hit_rate_percent": 0.0,
+          "total_tokens": 72200,
+          "avg_tokens_per_query": 591.8,
+          "total_cost_usd": 0.117,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.164,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 122
+        }
+      }
+    },
+    {
+      "date": "2025-08-04",
+      "timestamp": "2025-08-18T13:14:47.655607",
+      "records": 60,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250804.parquet",
+      "filter_stats": {
+        "total_analisados": 12468,
+        "etapa1_aprovados": 225,
+        "etapa1_rejeitados": 12243,
+        "etapa2_aprovados": 128,
+        "etapa2_rejeitados": 97,
+        "filtrados_aprovados": 128,
+        "filtrados_rejeitados": 12340,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 41,
+          "AVENTAL": 4,
+          "PAPEL": 70,
+          "MATERIAL P/ DESENHO": 11,
+          "PASTAS": 11,
+          "AUDIO": 31,
+          "ETIQUETA": 4,
+          "BORRACHA": 9,
+          "GARRAFAS": 12,
+          "CADERNO": 8,
+          "ESTOJO": 5,
+          "GRAMPEADORES": 2,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 2,
+          "CORRETIVOS": 2,
+          "BRINQUEDO EDUCATIVO": 5,
+          "MARMITA": 1,
+          "FITA ADESIVA": 1,
+          "MARCADORES": 1,
+          "MOCHILA / LANCHEIRA": 2,
+          "CANETAS DIVERSAS": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 1,
+          "AVENTAL": 4,
+          "PAPEL": 70,
+          "régua": 4,
+          "PASTAS": 11,
+          "pincel": 4,
+          "AUDIO": 27,
+          "ETIQUETA": 4,
+          "BORRACHA": 9,
+          "kit lanche": 3,
+          "cabo": 23,
+          "CADERNO": 3,
+          "ESTOJO": 5,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 2,
+          "necessaire": 2,
+          "filtro de linha": 3,
+          "microfone": 3,
+          "headset": 2,
+          "caixa de som": 4,
+          "refil": 5,
+          "GARRAFAS": 7,
+          "TESOURA": 2,
+          "CORRETIVOS": 2,
+          "garrafa térmica": 2,
+          "adaptador": 4,
+          "carimbo": 5,
+          "hub": 4,
+          "MARMITA": 1,
+          "aquarela": 3,
+          "FITA ADESIVA": 1,
+          "MARCADORES": 1,
+          "mochila": 2,
+          "caneta esferográfica": 1
+        },
+        "llm_economizados": 12243,
+        "taxa_aprovacao_final_percent": 1.03,
+        "taxa_etapa1_aprovacao_percent": 1.8,
+        "taxa_economia_llm_percent": 98.2,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            70
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            41
+          ],
+          [
+            "AUDIO",
+            31
+          ],
+          [
+            "GARRAFAS",
+            12
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            11
+          ],
+          [
+            "PASTAS",
+            11
+          ],
+          [
+            "BORRACHA",
+            9
+          ],
+          [
+            "CADERNO",
+            8
+          ],
+          [
+            "ESTOJO",
+            5
+          ],
+          [
+            "BRINQUEDO EDUCATIVO",
+            5
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            70
+          ],
+          [
+            "AUDIO",
+            27
+          ],
+          [
+            "cabo",
+            23
+          ],
+          [
+            "PASTAS",
+            11
+          ],
+          [
+            "BORRACHA",
+            9
+          ],
+          [
+            "GARRAFAS",
+            7
+          ],
+          [
+            "ESTOJO",
+            5
+          ],
+          [
+            "refil",
+            5
+          ],
+          [
+            "carimbo",
+            5
+          ],
+          [
+            "AVENTAL",
+            4
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 225,
+          "aprovados": 128,
+          "rejeitados": 97,
+          "approval_rate_percent": 56.89,
+          "cache_hits": 0,
+          "cache_misses": 225,
+          "cache_hit_rate_percent": 0.0,
+          "total_tokens": 131063,
+          "avg_tokens_per_query": 582.5,
+          "total_cost_usd": 0.2125,
+          "avg_cost_per_query": 0.0009,
+          "avg_response_time_seconds": 2.274,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 225
+        }
+      }
+    },
+    {
+      "date": "2025-08-05",
+      "timestamp": "2025-08-18T13:21:29.148072",
+      "records": 71,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250805.parquet",
+      "filter_stats": {
+        "total_analisados": 18656,
+        "etapa1_aprovados": 342,
+        "etapa1_rejeitados": 18314,
+        "etapa2_aprovados": 199,
+        "etapa2_rejeitados": 143,
+        "filtrados_aprovados": 199,
+        "filtrados_rejeitados": 18457,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 64,
+          "AVENTAL": 9,
+          "PAPEL": 107,
+          "MATERIAL P/ DESENHO": 12,
+          "PASTAS": 13,
+          "AUDIO": 42,
+          "ETIQUETA": 9,
+          "BORRACHA": 15,
+          "GARRAFAS": 14,
+          "CADERNO": 13,
+          "ESTOJO": 12,
+          "GRAMPEADORES": 3,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 2,
+          "CORRETIVOS": 2,
+          "BRINQUEDO EDUCATIVO": 7,
+          "MARMITA": 2,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 3,
+          "MOCHILA / LANCHEIRA": 3,
+          "CANETAS DIVERSAS": 1,
+          "EVA": 1,
+          "COLA OFFICE": 1,
+          "ACESSORIOS DE MESA": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 1,
+          "AVENTAL": 9,
+          "PAPEL": 107,
+          "régua": 4,
+          "PASTAS": 13,
+          "pincel": 5,
+          "AUDIO": 37,
+          "ETIQUETA": 9,
+          "BORRACHA": 15,
+          "kit lanche": 4,
+          "cabo": 35,
+          "CADERNO": 6,
+          "ESTOJO": 12,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 3,
+          "necessaire": 2,
+          "filtro de linha": 4,
+          "microfone": 7,
+          "headset": 3,
+          "caixa de som": 5,
+          "refil": 7,
+          "GARRAFAS": 8,
+          "TESOURA": 2,
+          "CORRETIVOS": 2,
+          "garrafa térmica": 2,
+          "adaptador": 6,
+          "carimbo": 7,
+          "hub": 5,
+          "MARMITA": 2,
+          "aquarela": 3,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 3,
+          "mochila": 3,
+          "caneta esferográfica": 1,
+          "EVA": 1,
+          "fone de ouvido": 1,
+          "cola instantanea": 1,
+          "webcam": 1,
+          "umidificador": 1
+        },
+        "llm_economizados": 18314,
+        "taxa_aprovacao_final_percent": 1.07,
+        "taxa_etapa1_aprovacao_percent": 1.83,
+        "taxa_economia_llm_percent": 98.17,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            107
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            64
+          ],
+          [
+            "AUDIO",
+            42
+          ],
+          [
+            "BORRACHA",
+            15
+          ],
+          [
+            "GARRAFAS",
+            14
+          ],
+          [
+            "PASTAS",
+            13
+          ],
+          [
+            "CADERNO",
+            13
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            12
+          ],
+          [
+            "ESTOJO",
+            12
+          ],
+          [
+            "AVENTAL",
+            9
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            107
+          ],
+          [
+            "AUDIO",
+            37
+          ],
+          [
+            "cabo",
+            35
+          ],
+          [
+            "BORRACHA",
+            15
+          ],
+          [
+            "PASTAS",
+            13
+          ],
+          [
+            "ESTOJO",
+            12
+          ],
+          [
+            "AVENTAL",
+            9
+          ],
+          [
+            "ETIQUETA",
+            9
+          ],
+          [
+            "GARRAFAS",
+            8
+          ],
+          [
+            "microfone",
+            7
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 341,
+          "aprovados": 198,
+          "rejeitados": 143,
+          "approval_rate_percent": 58.06,
+          "cache_hits": 1,
+          "cache_misses": 341,
+          "cache_hit_rate_percent": 0.29,
+          "total_tokens": 200357,
+          "avg_tokens_per_query": 587.56,
+          "total_cost_usd": 0.3246,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.568,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 341
+        }
+      }
+    },
+    {
+      "date": "2025-08-06",
+      "timestamp": "2025-08-18T13:28:27.052172",
+      "records": 61,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250806.parquet",
+      "filter_stats": {
+        "total_analisados": 24752,
+        "etapa1_aprovados": 444,
+        "etapa1_rejeitados": 24308,
+        "etapa2_aprovados": 260,
+        "etapa2_rejeitados": 184,
+        "filtrados_aprovados": 260,
+        "filtrados_rejeitados": 24492,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 86,
+          "AVENTAL": 11,
+          "PAPEL": 140,
+          "MATERIAL P/ DESENHO": 13,
+          "PASTAS": 17,
+          "AUDIO": 51,
+          "ETIQUETA": 12,
+          "BORRACHA": 22,
+          "GARRAFAS": 22,
+          "CADERNO": 16,
+          "ESTOJO": 14,
+          "GRAMPEADORES": 4,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 3,
+          "CORRETIVOS": 2,
+          "BRINQUEDO EDUCATIVO": 8,
+          "MARMITA": 2,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 3,
+          "MOCHILA / LANCHEIRA": 4,
+          "CANETAS DIVERSAS": 1,
+          "EVA": 2,
+          "COLA OFFICE": 1,
+          "ACESSORIOS DE MESA": 2,
+          "KITS LAPIS": 1,
+          "COLA ESCOLAR": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 2,
+          "AVENTAL": 11,
+          "PAPEL": 140,
+          "régua": 4,
+          "PASTAS": 17,
+          "pincel": 6,
+          "AUDIO": 44,
+          "ETIQUETA": 12,
+          "BORRACHA": 22,
+          "kit lanche": 5,
+          "cabo": 48,
+          "CADERNO": 9,
+          "ESTOJO": 14,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 4,
+          "necessaire": 2,
+          "filtro de linha": 4,
+          "microfone": 8,
+          "headset": 4,
+          "caixa de som": 7,
+          "refil": 7,
+          "GARRAFAS": 13,
+          "TESOURA": 3,
+          "CORRETIVOS": 2,
+          "garrafa térmica": 4,
+          "adaptador": 10,
+          "carimbo": 8,
+          "hub": 5,
+          "MARMITA": 2,
+          "aquarela": 3,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 3,
+          "mochila": 4,
+          "caneta esferográfica": 1,
+          "EVA": 2,
+          "fone de ouvido": 2,
+          "cola instantanea": 1,
+          "webcam": 2,
+          "umidificador": 2,
+          "kit escolar": 1,
+          "cola branca": 1
+        },
+        "llm_economizados": 24308,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.79,
+        "taxa_economia_llm_percent": 98.21,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            140
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            86
+          ],
+          [
+            "AUDIO",
+            51
+          ],
+          [
+            "BORRACHA",
+            22
+          ],
+          [
+            "GARRAFAS",
+            22
+          ],
+          [
+            "PASTAS",
+            17
+          ],
+          [
+            "CADERNO",
+            16
+          ],
+          [
+            "ESTOJO",
+            14
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            13
+          ],
+          [
+            "ETIQUETA",
+            12
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            140
+          ],
+          [
+            "cabo",
+            48
+          ],
+          [
+            "AUDIO",
+            44
+          ],
+          [
+            "BORRACHA",
+            22
+          ],
+          [
+            "PASTAS",
+            17
+          ],
+          [
+            "ESTOJO",
+            14
+          ],
+          [
+            "GARRAFAS",
+            13
+          ],
+          [
+            "ETIQUETA",
+            12
+          ],
+          [
+            "AVENTAL",
+            11
+          ],
+          [
+            "adaptador",
+            10
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 442,
+          "aprovados": 259,
+          "rejeitados": 183,
+          "approval_rate_percent": 58.6,
+          "cache_hits": 2,
+          "cache_misses": 442,
+          "cache_hit_rate_percent": 0.45,
+          "total_tokens": 260222,
+          "avg_tokens_per_query": 588.74,
+          "total_cost_usd": 0.4216,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.7,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 442
+        }
+      }
+    },
+    {
+      "date": "2025-08-07",
+      "timestamp": "2025-08-18T13:35:31.459288",
+      "records": 67,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250807.parquet",
+      "filter_stats": {
+        "total_analisados": 31284,
+        "etapa1_aprovados": 559,
+        "etapa1_rejeitados": 30725,
+        "etapa2_aprovados": 327,
+        "etapa2_rejeitados": 232,
+        "filtrados_aprovados": 327,
+        "filtrados_rejeitados": 30957,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 112,
+          "AVENTAL": 13,
+          "PAPEL": 162,
+          "MATERIAL P/ DESENHO": 16,
+          "PASTAS": 22,
+          "AUDIO": 69,
+          "ETIQUETA": 12,
+          "BORRACHA": 28,
+          "GARRAFAS": 32,
+          "CADERNO": 22,
+          "ESTOJO": 16,
+          "GRAMPEADORES": 4,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 4,
+          "CORRETIVOS": 2,
+          "BRINQUEDO EDUCATIVO": 12,
+          "MARMITA": 2,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 4,
+          "MOCHILA / LANCHEIRA": 4,
+          "CANETAS DIVERSAS": 4,
+          "EVA": 5,
+          "COLA OFFICE": 1,
+          "ACESSORIOS DE MESA": 2,
+          "KITS LAPIS": 2,
+          "COLA ESCOLAR": 3
+        },
+        "matches_por_termo": {
+          "mouse pad": 2,
+          "AVENTAL": 13,
+          "PAPEL": 162,
+          "régua": 5,
+          "PASTAS": 22,
+          "pincel": 6,
+          "AUDIO": 60,
+          "ETIQUETA": 12,
+          "BORRACHA": 28,
+          "kit lanche": 8,
+          "cabo": 62,
+          "CADERNO": 9,
+          "ESTOJO": 16,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 4,
+          "necessaire": 2,
+          "filtro de linha": 4,
+          "microfone": 11,
+          "headset": 5,
+          "caixa de som": 9,
+          "refil": 13,
+          "GARRAFAS": 19,
+          "TESOURA": 4,
+          "CORRETIVOS": 2,
+          "garrafa térmica": 5,
+          "adaptador": 16,
+          "carimbo": 12,
+          "hub": 6,
+          "MARMITA": 2,
+          "aquarela": 4,
+          "FITA ADESIVA": 4,
+          "MARCADORES": 4,
+          "mochila": 4,
+          "caneta esferográfica": 4,
+          "EVA": 5,
+          "fone de ouvido": 2,
+          "cola instantanea": 1,
+          "webcam": 3,
+          "umidificador": 2,
+          "kit escolar": 2,
+          "cola branca": 3,
+          "compasso": 1
+        },
+        "llm_economizados": 30725,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.79,
+        "taxa_economia_llm_percent": 98.21,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            162
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            112
+          ],
+          [
+            "AUDIO",
+            69
+          ],
+          [
+            "GARRAFAS",
+            32
+          ],
+          [
+            "BORRACHA",
+            28
+          ],
+          [
+            "PASTAS",
+            22
+          ],
+          [
+            "CADERNO",
+            22
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            16
+          ],
+          [
+            "ESTOJO",
+            16
+          ],
+          [
+            "AVENTAL",
+            13
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            162
+          ],
+          [
+            "cabo",
+            62
+          ],
+          [
+            "AUDIO",
+            60
+          ],
+          [
+            "BORRACHA",
+            28
+          ],
+          [
+            "PASTAS",
+            22
+          ],
+          [
+            "GARRAFAS",
+            19
+          ],
+          [
+            "ESTOJO",
+            16
+          ],
+          [
+            "adaptador",
+            16
+          ],
+          [
+            "AVENTAL",
+            13
+          ],
+          [
+            "refil",
+            13
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 555,
+          "aprovados": 325,
+          "rejeitados": 230,
+          "approval_rate_percent": 58.56,
+          "cache_hits": 4,
+          "cache_misses": 555,
+          "cache_hit_rate_percent": 0.72,
+          "total_tokens": 327178,
+          "avg_tokens_per_query": 589.51,
+          "total_cost_usd": 0.5301,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.79,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 555
+        }
+      }
+    },
+    {
+      "date": "2025-08-08",
+      "timestamp": "2025-08-18T13:42:17.190502",
+      "records": 61,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250808.parquet",
+      "filter_stats": {
+        "total_analisados": 37168,
+        "etapa1_aprovados": 669,
+        "etapa1_rejeitados": 36499,
+        "etapa2_aprovados": 388,
+        "etapa2_rejeitados": 281,
+        "filtrados_aprovados": 388,
+        "filtrados_rejeitados": 36780,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 139,
+          "AVENTAL": 14,
+          "PAPEL": 194,
+          "MATERIAL P/ DESENHO": 20,
+          "PASTAS": 25,
+          "AUDIO": 77,
+          "ETIQUETA": 13,
+          "BORRACHA": 31,
+          "GARRAFAS": 36,
+          "CADERNO": 29,
+          "ESTOJO": 17,
+          "GRAMPEADORES": 4,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 7,
+          "CORRETIVOS": 3,
+          "BRINQUEDO EDUCATIVO": 17,
+          "MARMITA": 2,
+          "FITA ADESIVA": 5,
+          "MARCADORES": 5,
+          "MOCHILA / LANCHEIRA": 5,
+          "CANETAS DIVERSAS": 4,
+          "EVA": 7,
+          "COLA OFFICE": 2,
+          "ACESSORIOS DE MESA": 3,
+          "KITS LAPIS": 2,
+          "COLA ESCOLAR": 3,
+          "GIZ": 1,
+          "CALCULADORAS": 1,
+          "CLIPS": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 2,
+          "AVENTAL": 14,
+          "PAPEL": 194,
+          "régua": 6,
+          "PASTAS": 25,
+          "pincel": 8,
+          "AUDIO": 68,
+          "ETIQUETA": 13,
+          "BORRACHA": 31,
+          "kit lanche": 10,
+          "cabo": 82,
+          "CADERNO": 12,
+          "ESTOJO": 17,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 4,
+          "necessaire": 2,
+          "filtro de linha": 4,
+          "microfone": 14,
+          "headset": 5,
+          "caixa de som": 9,
+          "refil": 17,
+          "GARRAFAS": 20,
+          "TESOURA": 7,
+          "CORRETIVOS": 3,
+          "garrafa térmica": 6,
+          "adaptador": 20,
+          "carimbo": 17,
+          "hub": 6,
+          "MARMITA": 2,
+          "aquarela": 5,
+          "FITA ADESIVA": 5,
+          "MARCADORES": 5,
+          "mochila": 5,
+          "caneta esferográfica": 4,
+          "EVA": 7,
+          "fone de ouvido": 2,
+          "cola instantanea": 1,
+          "webcam": 3,
+          "umidificador": 3,
+          "kit escolar": 2,
+          "cola branca": 3,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 1,
+          "CLIPS": 1,
+          "cola silicone": 1
+        },
+        "llm_economizados": 36499,
+        "taxa_aprovacao_final_percent": 1.04,
+        "taxa_etapa1_aprovacao_percent": 1.8,
+        "taxa_economia_llm_percent": 98.2,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            194
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            139
+          ],
+          [
+            "AUDIO",
+            77
+          ],
+          [
+            "GARRAFAS",
+            36
+          ],
+          [
+            "BORRACHA",
+            31
+          ],
+          [
+            "CADERNO",
+            29
+          ],
+          [
+            "PASTAS",
+            25
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            20
+          ],
+          [
+            "ESTOJO",
+            17
+          ],
+          [
+            "BRINQUEDO EDUCATIVO",
+            17
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            194
+          ],
+          [
+            "cabo",
+            82
+          ],
+          [
+            "AUDIO",
+            68
+          ],
+          [
+            "BORRACHA",
+            31
+          ],
+          [
+            "PASTAS",
+            25
+          ],
+          [
+            "GARRAFAS",
+            20
+          ],
+          [
+            "adaptador",
+            20
+          ],
+          [
+            "ESTOJO",
+            17
+          ],
+          [
+            "refil",
+            17
+          ],
+          [
+            "carimbo",
+            17
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 663,
+          "aprovados": 384,
+          "rejeitados": 279,
+          "approval_rate_percent": 57.92,
+          "cache_hits": 6,
+          "cache_misses": 663,
+          "cache_hit_rate_percent": 0.9,
+          "total_tokens": 390061,
+          "avg_tokens_per_query": 588.33,
+          "total_cost_usd": 0.6319,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 2.84,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 663
+        }
+      }
+    },
+    {
+      "date": "2025-08-11",
+      "timestamp": "2025-08-18T14:09:15.307584",
+      "records": 62,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250811.parquet",
+      "filter_stats": {
+        "total_analisados": 43313,
+        "etapa1_aprovados": 780,
+        "etapa1_rejeitados": 42533,
+        "etapa2_aprovados": 450,
+        "etapa2_rejeitados": 330,
+        "filtrados_aprovados": 450,
+        "filtrados_rejeitados": 42863,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 161,
+          "AVENTAL": 20,
+          "PAPEL": 219,
+          "MATERIAL P/ DESENHO": 22,
+          "PASTAS": 32,
+          "AUDIO": 93,
+          "ETIQUETA": 14,
+          "BORRACHA": 34,
+          "GARRAFAS": 41,
+          "CADERNO": 37,
+          "ESTOJO": 17,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 7,
+          "CORRETIVOS": 3,
+          "BRINQUEDO EDUCATIVO": 21,
+          "MARMITA": 2,
+          "FITA ADESIVA": 6,
+          "MARCADORES": 6,
+          "MOCHILA / LANCHEIRA": 9,
+          "CANETAS DIVERSAS": 4,
+          "EVA": 9,
+          "COLA OFFICE": 2,
+          "ACESSORIOS DE MESA": 3,
+          "KITS LAPIS": 2,
+          "COLA ESCOLAR": 3,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 2,
+          "APONTADOR": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 2,
+          "AVENTAL": 20,
+          "PAPEL": 219,
+          "régua": 7,
+          "PASTAS": 32,
+          "pincel": 9,
+          "AUDIO": 82,
+          "ETIQUETA": 14,
+          "BORRACHA": 34,
+          "kit lanche": 14,
+          "cabo": 92,
+          "CADERNO": 15,
+          "ESTOJO": 17,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 2,
+          "filtro de linha": 4,
+          "microfone": 19,
+          "headset": 6,
+          "caixa de som": 11,
+          "refil": 22,
+          "GARRAFAS": 21,
+          "TESOURA": 7,
+          "CORRETIVOS": 3,
+          "garrafa térmica": 6,
+          "adaptador": 22,
+          "carimbo": 21,
+          "hub": 9,
+          "MARMITA": 2,
+          "aquarela": 5,
+          "FITA ADESIVA": 6,
+          "MARCADORES": 6,
+          "mochila": 9,
+          "caneta esferográfica": 4,
+          "EVA": 9,
+          "fone de ouvido": 2,
+          "cola instantanea": 1,
+          "webcam": 3,
+          "umidificador": 3,
+          "kit escolar": 2,
+          "cola branca": 3,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 2,
+          "cola silicone": 1,
+          "APONTADOR": 1,
+          "mouse optico": 1
+        },
+        "llm_economizados": 42533,
+        "taxa_aprovacao_final_percent": 1.04,
+        "taxa_etapa1_aprovacao_percent": 1.8,
+        "taxa_economia_llm_percent": 98.2,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            219
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            161
+          ],
+          [
+            "AUDIO",
+            93
+          ],
+          [
+            "GARRAFAS",
+            41
+          ],
+          [
+            "CADERNO",
+            37
+          ],
+          [
+            "BORRACHA",
+            34
+          ],
+          [
+            "PASTAS",
+            32
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            22
+          ],
+          [
+            "BRINQUEDO EDUCATIVO",
+            21
+          ],
+          [
+            "AVENTAL",
+            20
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            219
+          ],
+          [
+            "cabo",
+            92
+          ],
+          [
+            "AUDIO",
+            82
+          ],
+          [
+            "BORRACHA",
+            34
+          ],
+          [
+            "PASTAS",
+            32
+          ],
+          [
+            "refil",
+            22
+          ],
+          [
+            "adaptador",
+            22
+          ],
+          [
+            "GARRAFAS",
+            21
+          ],
+          [
+            "carimbo",
+            21
+          ],
+          [
+            "AVENTAL",
+            20
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 771,
+          "aprovados": 446,
+          "rejeitados": 325,
+          "approval_rate_percent": 57.85,
+          "cache_hits": 9,
+          "cache_misses": 771,
+          "cache_hit_rate_percent": 1.15,
+          "total_tokens": 453034,
+          "avg_tokens_per_query": 587.59,
+          "total_cost_usd": 0.7341,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 3.67,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 771
+        }
+      }
+    },
+    {
+      "date": "2025-08-12",
+      "timestamp": "2025-08-18T14:26:49.064781",
+      "records": 78,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250812.parquet",
+      "filter_stats": {
+        "total_analisados": 50392,
+        "etapa1_aprovados": 914,
+        "etapa1_rejeitados": 49478,
+        "etapa2_aprovados": 528,
+        "etapa2_rejeitados": 386,
+        "filtrados_aprovados": 528,
+        "filtrados_rejeitados": 49864,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 184,
+          "AVENTAL": 23,
+          "PAPEL": 258,
+          "MATERIAL P/ DESENHO": 23,
+          "PASTAS": 40,
+          "AUDIO": 104,
+          "ETIQUETA": 22,
+          "BORRACHA": 40,
+          "GARRAFAS": 51,
+          "CADERNO": 41,
+          "ESTOJO": 23,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 9,
+          "CORRETIVOS": 3,
+          "BRINQUEDO EDUCATIVO": 23,
+          "MARMITA": 3,
+          "FITA ADESIVA": 8,
+          "MARCADORES": 6,
+          "MOCHILA / LANCHEIRA": 9,
+          "CANETAS DIVERSAS": 4,
+          "EVA": 12,
+          "COLA OFFICE": 3,
+          "ACESSORIOS DE MESA": 3,
+          "KITS LAPIS": 3,
+          "COLA ESCOLAR": 3,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 3,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 1,
+          "APAGADOR": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 3,
+          "AVENTAL": 23,
+          "PAPEL": 258,
+          "régua": 7,
+          "PASTAS": 40,
+          "pincel": 10,
+          "AUDIO": 91,
+          "ETIQUETA": 22,
+          "BORRACHA": 40,
+          "kit lanche": 16,
+          "cabo": 107,
+          "CADERNO": 18,
+          "ESTOJO": 23,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 2,
+          "filtro de linha": 5,
+          "microfone": 20,
+          "headset": 7,
+          "caixa de som": 13,
+          "refil": 23,
+          "GARRAFAS": 27,
+          "TESOURA": 9,
+          "CORRETIVOS": 3,
+          "garrafa térmica": 8,
+          "adaptador": 23,
+          "carimbo": 23,
+          "hub": 10,
+          "MARMITA": 3,
+          "aquarela": 5,
+          "FITA ADESIVA": 8,
+          "MARCADORES": 6,
+          "mochila": 9,
+          "caneta esferográfica": 4,
+          "EVA": 12,
+          "fone de ouvido": 2,
+          "cola instantanea": 2,
+          "webcam": 4,
+          "umidificador": 3,
+          "kit escolar": 3,
+          "cola branca": 3,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 3,
+          "cola silicone": 1,
+          "APONTADOR": 1,
+          "mouse optico": 1,
+          "LAPIS DE COR": 1,
+          "APAGADOR": 1,
+          "mouse sem fio": 1
+        },
+        "llm_economizados": 49478,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.81,
+        "taxa_economia_llm_percent": 98.19,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            258
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            184
+          ],
+          [
+            "AUDIO",
+            104
+          ],
+          [
+            "GARRAFAS",
+            51
+          ],
+          [
+            "CADERNO",
+            41
+          ],
+          [
+            "PASTAS",
+            40
+          ],
+          [
+            "BORRACHA",
+            40
+          ],
+          [
+            "AVENTAL",
+            23
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            23
+          ],
+          [
+            "ESTOJO",
+            23
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            258
+          ],
+          [
+            "cabo",
+            107
+          ],
+          [
+            "AUDIO",
+            91
+          ],
+          [
+            "PASTAS",
+            40
+          ],
+          [
+            "BORRACHA",
+            40
+          ],
+          [
+            "GARRAFAS",
+            27
+          ],
+          [
+            "AVENTAL",
+            23
+          ],
+          [
+            "ESTOJO",
+            23
+          ],
+          [
+            "refil",
+            23
+          ],
+          [
+            "adaptador",
+            23
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 902,
+          "aprovados": 522,
+          "rejeitados": 380,
+          "approval_rate_percent": 57.87,
+          "cache_hits": 12,
+          "cache_misses": 902,
+          "cache_hit_rate_percent": 1.31,
+          "total_tokens": 530066,
+          "avg_tokens_per_query": 587.66,
+          "total_cost_usd": 0.8587,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.135,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 902
+        }
+      }
+    },
+    {
+      "date": "2025-08-13",
+      "timestamp": "2025-08-18T14:37:52.401728",
+      "records": 62,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250813.parquet",
+      "filter_stats": {
+        "total_analisados": 56910,
+        "etapa1_aprovados": 1023,
+        "etapa1_rejeitados": 55887,
+        "etapa2_aprovados": 590,
+        "etapa2_rejeitados": 433,
+        "filtrados_aprovados": 590,
+        "filtrados_rejeitados": 56320,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 203,
+          "AVENTAL": 25,
+          "PAPEL": 294,
+          "MATERIAL P/ DESENHO": 25,
+          "PASTAS": 44,
+          "AUDIO": 112,
+          "ETIQUETA": 23,
+          "BORRACHA": 45,
+          "GARRAFAS": 61,
+          "CADERNO": 46,
+          "ESTOJO": 26,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 2,
+          "TESOURA": 9,
+          "CORRETIVOS": 3,
+          "BRINQUEDO EDUCATIVO": 24,
+          "MARMITA": 4,
+          "FITA ADESIVA": 9,
+          "MARCADORES": 7,
+          "MOCHILA / LANCHEIRA": 10,
+          "CANETAS DIVERSAS": 5,
+          "EVA": 12,
+          "COLA OFFICE": 4,
+          "ACESSORIOS DE MESA": 4,
+          "KITS LAPIS": 4,
+          "COLA ESCOLAR": 5,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 4,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 1,
+          "REV - PASTAS": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 3,
+          "AVENTAL": 25,
+          "PAPEL": 294,
+          "régua": 9,
+          "PASTAS": 44,
+          "pincel": 10,
+          "AUDIO": 98,
+          "ETIQUETA": 23,
+          "BORRACHA": 45,
+          "kit lanche": 19,
+          "cabo": 114,
+          "CADERNO": 20,
+          "ESTOJO": 26,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 2,
+          "filtro de linha": 6,
+          "microfone": 24,
+          "headset": 8,
+          "caixa de som": 14,
+          "refil": 26,
+          "GARRAFAS": 31,
+          "TESOURA": 9,
+          "CORRETIVOS": 3,
+          "garrafa térmica": 11,
+          "adaptador": 27,
+          "carimbo": 24,
+          "hub": 10,
+          "MARMITA": 4,
+          "aquarela": 5,
+          "FITA ADESIVA": 9,
+          "MARCADORES": 7,
+          "mochila": 10,
+          "caneta esferográfica": 5,
+          "EVA": 12,
+          "fone de ouvido": 3,
+          "cola instantanea": 2,
+          "webcam": 4,
+          "umidificador": 4,
+          "kit escolar": 4,
+          "cola branca": 4,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 2,
+          "CLIPS": 4,
+          "cola silicone": 2,
+          "APONTADOR": 1,
+          "mouse optico": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 1,
+          "mouse sem fio": 2,
+          "pasta catalogo": 1,
+          "cola bastao": 1
+        },
+        "llm_economizados": 55887,
+        "taxa_aprovacao_final_percent": 1.04,
+        "taxa_etapa1_aprovacao_percent": 1.8,
+        "taxa_economia_llm_percent": 98.2,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            294
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            203
+          ],
+          [
+            "AUDIO",
+            112
+          ],
+          [
+            "GARRAFAS",
+            61
+          ],
+          [
+            "CADERNO",
+            46
+          ],
+          [
+            "BORRACHA",
+            45
+          ],
+          [
+            "PASTAS",
+            44
+          ],
+          [
+            "ESTOJO",
+            26
+          ],
+          [
+            "AVENTAL",
+            25
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            25
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            294
+          ],
+          [
+            "cabo",
+            114
+          ],
+          [
+            "AUDIO",
+            98
+          ],
+          [
+            "BORRACHA",
+            45
+          ],
+          [
+            "PASTAS",
+            44
+          ],
+          [
+            "GARRAFAS",
+            31
+          ],
+          [
+            "adaptador",
+            27
+          ],
+          [
+            "ESTOJO",
+            26
+          ],
+          [
+            "refil",
+            26
+          ],
+          [
+            "AVENTAL",
+            25
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 1007,
+          "aprovados": 582,
+          "rejeitados": 425,
+          "approval_rate_percent": 57.8,
+          "cache_hits": 16,
+          "cache_misses": 1007,
+          "cache_hit_rate_percent": 1.56,
+          "total_tokens": 592501,
+          "avg_tokens_per_query": 588.38,
+          "total_cost_usd": 0.9598,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.287,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 1007
+        }
+      }
+    },
+    {
+      "date": "2025-08-14",
+      "timestamp": "2025-08-18T14:54:36.379901",
+      "records": 79,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250814.parquet",
+      "filter_stats": {
+        "total_analisados": 63764,
+        "etapa1_aprovados": 1169,
+        "etapa1_rejeitados": 62595,
+        "etapa2_aprovados": 669,
+        "etapa2_rejeitados": 500,
+        "filtrados_aprovados": 669,
+        "filtrados_rejeitados": 63095,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 244,
+          "AVENTAL": 27,
+          "PAPEL": 326,
+          "MATERIAL P/ DESENHO": 29,
+          "PASTAS": 49,
+          "AUDIO": 123,
+          "ETIQUETA": 29,
+          "BORRACHA": 50,
+          "GARRAFAS": 73,
+          "CADERNO": 50,
+          "ESTOJO": 27,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 3,
+          "TESOURA": 9,
+          "CORRETIVOS": 7,
+          "BRINQUEDO EDUCATIVO": 27,
+          "MARMITA": 4,
+          "FITA ADESIVA": 10,
+          "MARCADORES": 8,
+          "MOCHILA / LANCHEIRA": 15,
+          "CANETAS DIVERSAS": 5,
+          "EVA": 16,
+          "COLA OFFICE": 5,
+          "ACESSORIOS DE MESA": 4,
+          "KITS LAPIS": 4,
+          "COLA ESCOLAR": 5,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 1,
+          "REV - PASTAS": 1,
+          "ESTILETES": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 5,
+          "AVENTAL": 27,
+          "PAPEL": 326,
+          "régua": 9,
+          "PASTAS": 49,
+          "pincel": 13,
+          "AUDIO": 106,
+          "ETIQUETA": 29,
+          "BORRACHA": 50,
+          "kit lanche": 25,
+          "cabo": 137,
+          "CADERNO": 21,
+          "ESTOJO": 27,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 3,
+          "filtro de linha": 7,
+          "microfone": 32,
+          "headset": 9,
+          "caixa de som": 17,
+          "refil": 29,
+          "GARRAFAS": 37,
+          "TESOURA": 9,
+          "CORRETIVOS": 7,
+          "garrafa térmica": 11,
+          "adaptador": 31,
+          "carimbo": 27,
+          "hub": 10,
+          "MARMITA": 4,
+          "aquarela": 6,
+          "FITA ADESIVA": 10,
+          "MARCADORES": 8,
+          "mochila": 15,
+          "caneta esferográfica": 5,
+          "EVA": 16,
+          "fone de ouvido": 3,
+          "cola instantanea": 2,
+          "webcam": 4,
+          "umidificador": 4,
+          "kit escolar": 4,
+          "cola branca": 4,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "cola silicone": 2,
+          "APONTADOR": 1,
+          "mouse optico": 2,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 1,
+          "mouse sem fio": 3,
+          "pasta catalogo": 1,
+          "cola bastao": 1,
+          "ESTILETES": 1,
+          "cola quente": 1
+        },
+        "llm_economizados": 62595,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.83,
+        "taxa_economia_llm_percent": 98.17,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            326
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            244
+          ],
+          [
+            "AUDIO",
+            123
+          ],
+          [
+            "GARRAFAS",
+            73
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "CADERNO",
+            50
+          ],
+          [
+            "PASTAS",
+            49
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            29
+          ],
+          [
+            "ETIQUETA",
+            29
+          ],
+          [
+            "AVENTAL",
+            27
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            326
+          ],
+          [
+            "cabo",
+            137
+          ],
+          [
+            "AUDIO",
+            106
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "PASTAS",
+            49
+          ],
+          [
+            "GARRAFAS",
+            37
+          ],
+          [
+            "microfone",
+            32
+          ],
+          [
+            "adaptador",
+            31
+          ],
+          [
+            "ETIQUETA",
+            29
+          ],
+          [
+            "refil",
+            29
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 1151,
+          "aprovados": 660,
+          "rejeitados": 491,
+          "approval_rate_percent": 57.34,
+          "cache_hits": 18,
+          "cache_misses": 1151,
+          "cache_hit_rate_percent": 1.54,
+          "total_tokens": 679561,
+          "avg_tokens_per_query": 590.41,
+          "total_cost_usd": 1.1008,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.623,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 1151
+        }
+      }
+    },
+    {
+      "date": "2025-08-15",
+      "timestamp": "2025-08-18T15:02:22.603309",
+      "records": 60,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250815.parquet",
+      "filter_stats": {
+        "total_analisados": 69497,
+        "etapa1_aprovados": 1271,
+        "etapa1_rejeitados": 68226,
+        "etapa2_aprovados": 729,
+        "etapa2_rejeitados": 542,
+        "filtrados_aprovados": 729,
+        "filtrados_rejeitados": 68768,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 272,
+          "AVENTAL": 31,
+          "PAPEL": 353,
+          "MATERIAL P/ DESENHO": 29,
+          "PASTAS": 54,
+          "AUDIO": 136,
+          "ETIQUETA": 32,
+          "BORRACHA": 50,
+          "GARRAFAS": 77,
+          "CADERNO": 57,
+          "ESTOJO": 28,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 4,
+          "TESOURA": 11,
+          "CORRETIVOS": 8,
+          "BRINQUEDO EDUCATIVO": 27,
+          "MARMITA": 4,
+          "FITA ADESIVA": 12,
+          "MARCADORES": 8,
+          "MOCHILA / LANCHEIRA": 15,
+          "CANETAS DIVERSAS": 6,
+          "EVA": 17,
+          "COLA OFFICE": 5,
+          "ACESSORIOS DE MESA": 4,
+          "KITS LAPIS": 4,
+          "COLA ESCOLAR": 6,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "REV - PASTAS": 1,
+          "ESTILETES": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 6,
+          "AVENTAL": 31,
+          "PAPEL": 353,
+          "régua": 9,
+          "PASTAS": 54,
+          "pincel": 13,
+          "AUDIO": 118,
+          "ETIQUETA": 32,
+          "BORRACHA": 50,
+          "kit lanche": 26,
+          "cabo": 153,
+          "CADERNO": 21,
+          "ESTOJO": 28,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 4,
+          "filtro de linha": 7,
+          "microfone": 35,
+          "headset": 10,
+          "caixa de som": 18,
+          "refil": 36,
+          "GARRAFAS": 37,
+          "TESOURA": 11,
+          "CORRETIVOS": 8,
+          "garrafa térmica": 14,
+          "adaptador": 34,
+          "carimbo": 27,
+          "hub": 10,
+          "MARMITA": 4,
+          "aquarela": 6,
+          "FITA ADESIVA": 12,
+          "MARCADORES": 8,
+          "mochila": 15,
+          "caneta esferográfica": 6,
+          "EVA": 17,
+          "fone de ouvido": 5,
+          "cola instantanea": 2,
+          "webcam": 5,
+          "umidificador": 4,
+          "kit escolar": 4,
+          "cola branca": 5,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "cola silicone": 2,
+          "APONTADOR": 1,
+          "mouse optico": 2,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "mouse sem fio": 4,
+          "pasta catalogo": 1,
+          "cola bastao": 1,
+          "ESTILETES": 1,
+          "cola quente": 1
+        },
+        "llm_economizados": 68226,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.83,
+        "taxa_economia_llm_percent": 98.17,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            353
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            272
+          ],
+          [
+            "AUDIO",
+            136
+          ],
+          [
+            "GARRAFAS",
+            77
+          ],
+          [
+            "CADERNO",
+            57
+          ],
+          [
+            "PASTAS",
+            54
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "ETIQUETA",
+            32
+          ],
+          [
+            "AVENTAL",
+            31
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            29
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            353
+          ],
+          [
+            "cabo",
+            153
+          ],
+          [
+            "AUDIO",
+            118
+          ],
+          [
+            "PASTAS",
+            54
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "GARRAFAS",
+            37
+          ],
+          [
+            "refil",
+            36
+          ],
+          [
+            "microfone",
+            35
+          ],
+          [
+            "adaptador",
+            34
+          ],
+          [
+            "ETIQUETA",
+            32
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 1250,
+          "aprovados": 717,
+          "rejeitados": 533,
+          "approval_rate_percent": 57.36,
+          "cache_hits": 21,
+          "cache_misses": 1250,
+          "cache_hit_rate_percent": 1.65,
+          "total_tokens": 738883,
+          "avg_tokens_per_query": 591.11,
+          "total_cost_usd": 1.1969,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.462,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 1250
+        }
+      }
+    },
+    {
+      "date": "2025-08-16",
+      "timestamp": "2025-08-18T15:07:11.307143",
+      "records": 2,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250816.parquet",
+      "filter_stats": {
+        "total_analisados": 69599,
+        "etapa1_aprovados": 1273,
+        "etapa1_rejeitados": 68326,
+        "etapa2_aprovados": 731,
+        "etapa2_rejeitados": 542,
+        "filtrados_aprovados": 731,
+        "filtrados_rejeitados": 68868,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 273,
+          "AVENTAL": 31,
+          "PAPEL": 354,
+          "MATERIAL P/ DESENHO": 29,
+          "PASTAS": 54,
+          "AUDIO": 136,
+          "ETIQUETA": 32,
+          "BORRACHA": 50,
+          "GARRAFAS": 77,
+          "CADERNO": 57,
+          "ESTOJO": 28,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 4,
+          "TESOURA": 11,
+          "CORRETIVOS": 8,
+          "BRINQUEDO EDUCATIVO": 27,
+          "MARMITA": 4,
+          "FITA ADESIVA": 12,
+          "MARCADORES": 8,
+          "MOCHILA / LANCHEIRA": 15,
+          "CANETAS DIVERSAS": 6,
+          "EVA": 17,
+          "COLA OFFICE": 5,
+          "ACESSORIOS DE MESA": 4,
+          "KITS LAPIS": 4,
+          "COLA ESCOLAR": 6,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "REV - PASTAS": 1,
+          "ESTILETES": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 6,
+          "AVENTAL": 31,
+          "PAPEL": 354,
+          "régua": 9,
+          "PASTAS": 54,
+          "pincel": 13,
+          "AUDIO": 118,
+          "ETIQUETA": 32,
+          "BORRACHA": 50,
+          "kit lanche": 26,
+          "cabo": 153,
+          "CADERNO": 21,
+          "ESTOJO": 28,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 4,
+          "filtro de linha": 7,
+          "microfone": 35,
+          "headset": 11,
+          "caixa de som": 18,
+          "refil": 36,
+          "GARRAFAS": 37,
+          "TESOURA": 11,
+          "CORRETIVOS": 8,
+          "garrafa térmica": 14,
+          "adaptador": 34,
+          "carimbo": 27,
+          "hub": 10,
+          "MARMITA": 4,
+          "aquarela": 6,
+          "FITA ADESIVA": 12,
+          "MARCADORES": 8,
+          "mochila": 15,
+          "caneta esferográfica": 6,
+          "EVA": 17,
+          "fone de ouvido": 5,
+          "cola instantanea": 2,
+          "webcam": 5,
+          "umidificador": 4,
+          "kit escolar": 4,
+          "cola branca": 5,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "cola silicone": 2,
+          "APONTADOR": 1,
+          "mouse optico": 2,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "mouse sem fio": 4,
+          "pasta catalogo": 1,
+          "cola bastao": 1,
+          "ESTILETES": 1,
+          "cola quente": 1
+        },
+        "llm_economizados": 68326,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.83,
+        "taxa_economia_llm_percent": 98.17,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            354
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            273
+          ],
+          [
+            "AUDIO",
+            136
+          ],
+          [
+            "GARRAFAS",
+            77
+          ],
+          [
+            "CADERNO",
+            57
+          ],
+          [
+            "PASTAS",
+            54
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "ETIQUETA",
+            32
+          ],
+          [
+            "AVENTAL",
+            31
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            29
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            354
+          ],
+          [
+            "cabo",
+            153
+          ],
+          [
+            "AUDIO",
+            118
+          ],
+          [
+            "PASTAS",
+            54
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "GARRAFAS",
+            37
+          ],
+          [
+            "refil",
+            36
+          ],
+          [
+            "microfone",
+            35
+          ],
+          [
+            "adaptador",
+            34
+          ],
+          [
+            "ETIQUETA",
+            32
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 1251,
+          "aprovados": 718,
+          "rejeitados": 533,
+          "approval_rate_percent": 57.39,
+          "cache_hits": 22,
+          "cache_misses": 1251,
+          "cache_hit_rate_percent": 1.73,
+          "total_tokens": 739383,
+          "avg_tokens_per_query": 591.03,
+          "total_cost_usd": 1.1978,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.46,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 1251
+        }
+      }
+    },
+    {
+      "date": "2025-08-18",
+      "timestamp": "2025-08-18T15:17:03.950121",
+      "records": 55,
+      "filepath": "s3://pncp-extractor-data-prod-566387937580/raw-data/year=2025/month=08/pncp_contratos_20250818.parquet",
+      "filter_stats": {
+        "total_analisados": 74705,
+        "etapa1_aprovados": 1363,
+        "etapa1_rejeitados": 73342,
+        "etapa2_aprovados": 786,
+        "etapa2_rejeitados": 577,
+        "filtrados_aprovados": 786,
+        "filtrados_rejeitados": 73919,
+        "matches_por_grupo": {
+          "ACESSORIOS INFORMAT": 295,
+          "AVENTAL": 34,
+          "PAPEL": 376,
+          "MATERIAL P/ DESENHO": 31,
+          "PASTAS": 58,
+          "AUDIO": 146,
+          "ETIQUETA": 34,
+          "BORRACHA": 50,
+          "GARRAFAS": 85,
+          "CADERNO": 59,
+          "ESTOJO": 30,
+          "GRAMPEADORES": 5,
+          "MATERIAL EXPOSITOR": 4,
+          "TESOURA": 11,
+          "CORRETIVOS": 9,
+          "BRINQUEDO EDUCATIVO": 30,
+          "MARMITA": 4,
+          "FITA ADESIVA": 15,
+          "MARCADORES": 8,
+          "MOCHILA / LANCHEIRA": 17,
+          "CANETAS DIVERSAS": 6,
+          "EVA": 21,
+          "COLA OFFICE": 5,
+          "ACESSORIOS DE MESA": 4,
+          "KITS LAPIS": 4,
+          "COLA ESCOLAR": 6,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "APONTADOR": 1,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "REV - PASTAS": 1,
+          "ESTILETES": 1
+        },
+        "matches_por_termo": {
+          "mouse pad": 6,
+          "AVENTAL": 34,
+          "PAPEL": 376,
+          "régua": 10,
+          "PASTAS": 58,
+          "pincel": 13,
+          "AUDIO": 127,
+          "ETIQUETA": 34,
+          "BORRACHA": 50,
+          "kit lanche": 29,
+          "cabo": 167,
+          "CADERNO": 21,
+          "ESTOJO": 30,
+          "suporte para notebook": 1,
+          "GRAMPEADORES": 5,
+          "necessaire": 4,
+          "filtro de linha": 8,
+          "microfone": 36,
+          "headset": 12,
+          "caixa de som": 19,
+          "refil": 38,
+          "GARRAFAS": 42,
+          "TESOURA": 11,
+          "CORRETIVOS": 9,
+          "garrafa térmica": 14,
+          "adaptador": 36,
+          "carimbo": 30,
+          "hub": 11,
+          "MARMITA": 4,
+          "aquarela": 6,
+          "FITA ADESIVA": 15,
+          "MARCADORES": 8,
+          "mochila": 17,
+          "caneta esferográfica": 6,
+          "EVA": 21,
+          "fone de ouvido": 6,
+          "cola instantanea": 2,
+          "webcam": 5,
+          "umidificador": 4,
+          "kit escolar": 4,
+          "cola branca": 5,
+          "compasso": 1,
+          "GIZ": 1,
+          "CALCULADORAS": 4,
+          "CLIPS": 4,
+          "cola silicone": 2,
+          "APONTADOR": 1,
+          "mouse optico": 2,
+          "LAPIS DE COR": 2,
+          "APAGADOR": 2,
+          "mouse sem fio": 4,
+          "pasta catalogo": 1,
+          "cola bastao": 1,
+          "ESTILETES": 1,
+          "cola quente": 1,
+          "guache": 1,
+          "mouse usb": 1
+        },
+        "llm_economizados": 73342,
+        "taxa_aprovacao_final_percent": 1.05,
+        "taxa_etapa1_aprovacao_percent": 1.82,
+        "taxa_economia_llm_percent": 98.18,
+        "filtro_hibrido_ativo": true,
+        "top_grupos": [
+          [
+            "PAPEL",
+            376
+          ],
+          [
+            "ACESSORIOS INFORMAT",
+            295
+          ],
+          [
+            "AUDIO",
+            146
+          ],
+          [
+            "GARRAFAS",
+            85
+          ],
+          [
+            "CADERNO",
+            59
+          ],
+          [
+            "PASTAS",
+            58
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "AVENTAL",
+            34
+          ],
+          [
+            "ETIQUETA",
+            34
+          ],
+          [
+            "MATERIAL P/ DESENHO",
+            31
+          ]
+        ],
+        "top_termos": [
+          [
+            "PAPEL",
+            376
+          ],
+          [
+            "cabo",
+            167
+          ],
+          [
+            "AUDIO",
+            127
+          ],
+          [
+            "PASTAS",
+            58
+          ],
+          [
+            "BORRACHA",
+            50
+          ],
+          [
+            "GARRAFAS",
+            42
+          ],
+          [
+            "refil",
+            38
+          ],
+          [
+            "microfone",
+            36
+          ],
+          [
+            "adaptador",
+            36
+          ],
+          [
+            "AVENTAL",
+            34
+          ]
+        ],
+        "llm_stats": {
+          "total_queries": 1335,
+          "aprovados": 769,
+          "rejeitados": 566,
+          "approval_rate_percent": 57.6,
+          "cache_hits": 28,
+          "cache_misses": 1335,
+          "cache_hit_rate_percent": 2.05,
+          "total_tokens": 788888,
+          "avg_tokens_per_query": 590.93,
+          "total_cost_usd": 1.278,
+          "avg_cost_per_query": 0.001,
+          "avg_response_time_seconds": 4.385,
+          "errors": 0,
+          "model_used": "gpt-3.5-turbo",
+          "cache_size": 1335
+        }
+      }
     }
   ]
 }

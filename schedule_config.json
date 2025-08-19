@@ -1,0 +1,15 @@
+{
+    "Name": "pncp-daily-extraction",
+    "Description": "Execução diária da extração de dados PNCP",
+    "ScheduleExpression": "cron(0 6 * * ? *)",
+    "State": "ENABLED",
+    "Target": {
+        "RoleArn": "arn:aws:iam::566387937580:role/service-role/Amazon_EventBridge_Scheduler_LAMBDA_ROLE",
+        "Arn": "arn:aws:lambda:us-east-2:566387937580:function:pncp-extractor",
+        "Input": "{\"execution_type\": \"scheduled\", \"date\": \"auto\"}"
+    },
+    "FlexibleTimeWindow": {
+        "Mode": "FLEXIBLE",
+        "MaximumWindowInMinutes": 15
+    }
+}
