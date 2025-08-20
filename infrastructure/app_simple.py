@@ -19,16 +19,11 @@ class SimpleStorageStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
         
-        # Bucket principal para dados
-        self.data_bucket = s3.Bucket(
+        # Referência ao bucket existente (não criar novo)
+        self.data_bucket = s3.Bucket.from_bucket_name(
             self,
             "DataBucket",
-            bucket_name="pncp-extractor-data-prod",
-            encryption=s3.BucketEncryption.S3_MANAGED,
-            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-            enforce_ssl=True,
-            versioned=True,
-            removal_policy=RemovalPolicy.RETAIN
+            bucket_name="pncp-extractor-data-prod-566387937580"
         )
         
         # Output do bucket
