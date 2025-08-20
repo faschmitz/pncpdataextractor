@@ -161,36 +161,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
         
-    - name: Install AWS CDK
+    - name: Skip Infrastructure Deploy
       run: |
-        npm install -g aws-cdk@latest
-        
-    - name: Install Python dependencies for CDK
-      run: |
-        cd infrastructure
-        pip install -r requirements.txt
-        
-    - name: CDK Bootstrap (if needed)
-      run: |
-        cd infrastructure
-        cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ env.AWS_REGION }}
-        
-    - name: CDK Diff
-      run: |
-        cd infrastructure
-        cdk diff --all
-        
-    - name: CDK Deploy
-      run: |
-        cd infrastructure
-        cdk deploy --all --require-approval never
-        
-    - name: Save deployment outputs
-      run: |
-        cd infrastructure
-        cdk ls > cdk-stacks.txt
-        echo "Deployed stacks:" 
-        cat cdk-stacks.txt
+        echo "🏗️ Infraestrutura já configurada - pulando CDK"
 
   # Job 4: Update ECS service com nova imagem
   deploy-application:
