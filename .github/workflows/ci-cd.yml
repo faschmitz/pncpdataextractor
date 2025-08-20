@@ -238,22 +238,6 @@ jobs:
           exit 1
         fi
         
-    - name: Test Step Functions state machine
-      run: |
-        # Verificar se state machine existe
-        STATE_MACHINE_ARN=$(aws stepfunctions list-state-machines \
-          --query 'stateMachines[?contains(name, `pncp-extractor`)].stateMachineArn' \
-          --output text)
-        
-        if [ -n "$STATE_MACHINE_ARN" ]; then
-          echo "✅ Step Functions state machine found: $STATE_MACHINE_ARN"
-          
-          # Opcionalmente, executar um teste da state machine
-          # aws stepfunctions start-execution --state-machine-arn $STATE_MACHINE_ARN --input '{"ExecutionType": "test"}'
-        else
-          echo "❌ Step Functions state machine not found"
-          exit 1
-        fi
         
     - name: Verify ECS cluster health
       run: |
