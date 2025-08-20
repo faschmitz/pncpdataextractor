@@ -150,31 +150,56 @@ class PNCPContractionsExtractor:
             return base_dir
         
     def load_state(self) -> Dict[str, Any]:
-        """Carrega o estado da última execução"""
+        """Carrega o estado da última execução do S3"""
+        try:
+            # Tentar carregar do S3 primeiro
+            if hasattr(self, 'storage_manager') and self.storage_manager.use_s3:
+                response = self.storage_manager.s3_client.get_object(
+                    Bucket=self.storage_manager.s3_bucket,
+                    Key='state.json'
+                )
+                state_data = response['Body'].read().decode('utf-8')
+                self.logger.info("Estado carregado do S3")
+                return json.loads(state_data)
+        except Exception as e:
+            self.logger.info(f"Estado não encontrado no S3 (primeira execução): {e}")
+        
+        # Fallback: tentar arquivo local
         state_path = Path(self.config.state_file)
         if state_path.exists():
             try:
                 with open(state_path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
-                self.logger.warning(f"Erro ao carregar estado: {e}. Iniciando do zero.")
+                self.logger.warning(f"Erro ao carregar estado local: {e}")
         
-        # Estado inicial - começar de 2021 (início do PNCP)
+        # Estado inicial
         return {
             'last_extraction_date': None,
             'total_records_extracted': 0,
             'last_extraction_timestamp': None,
             'modalidades_processadas': {},
-            'periodos_completos': []
+            'processed_dates': []
         }
     
     def save_state(self, state: Dict[str, Any]):
-        """Salva o estado atual"""
+        """Salva o estado atual no S3 e localmente"""
         try:
+            # Salvar no S3 primeiro
+            if hasattr(self, 'storage_manager') and self.storage_manager.use_s3:
+                state_json = json.dumps(state, indent=2, ensure_ascii=False, default=str)
+                self.storage_manager.s3_client.put_object(
+                    Bucket=self.storage_manager.s3_bucket,
+                    Key='state.json',
+                    Body=state_json.encode('utf-8'),
+                    ContentType='application/json'
+                )
+                self.logger.info(f"Estado salvo no S3: total_records={state.get('total_records_extracted', 0)}")
+            
+            # Backup local também
             with self._lock:
                 with open(self.config.state_file, 'w', encoding='utf-8') as f:
                     json.dump(state, f, indent=2, ensure_ascii=False, default=str)
-                self.logger.info(f"Estado salvo: total_records={state.get('total_records_extracted', 0)}")
         except Exception as e:
             self.logger.error(f"Erro ao salvar estado: {e}")
     
