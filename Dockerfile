@@ -54,8 +54,8 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
 # Mudar para usuário não-root
 USER appuser
 
-# Comando padrão para executar o extrator
-CMD ["python", "extractor.py"]
+# Comando padrão para executar o extrator em modo produção (incremental)
+CMD ["python", "extractor.py", "--production"]
 
 # Labels para metadata
 LABEL maintainer="Leonora Comercio Internacional"
