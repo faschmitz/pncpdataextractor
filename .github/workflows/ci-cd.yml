@@ -202,10 +202,37 @@ jobs:
         jq --arg IMAGE "$IMAGE_URI" '.containerDefinitions[0].image = $IMAGE | del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy)' task-def.json > new-task-def.json
         
         # Registrar nova task definition
-        aws ecs register-task-definition \
-          --cli-input-json file://new-task-def.json
+        NEW_TASK_DEF_ARN=$(aws ecs register-task-definition \
+          --cli-input-json file://new-task-def.json \
+          --query 'taskDefinition.taskDefinitionArn' \
+          --output text)
           
         echo "Updated task definition with new image: $IMAGE_URI"
+        echo "New task definition: $NEW_TASK_DEF_ARN"
+        
+        # Atualizar EventBridge para usar nova task definition
+        aws events put-targets --rule "pncp-daily-extraction" --targets '[
+          {
+            "Id": "1",
+            "Arn": "arn:aws:ecs:us-east-2:566387937580:cluster/pncp-extractor-cluster",
+            "RoleArn": "arn:aws:iam::566387937580:role/EventBridgeECSRole",
+            "EcsParameters": {
+              "TaskDefinitionArn": "'$NEW_TASK_DEF_ARN'",
+              "TaskCount": 1,
+              "LaunchType": "FARGATE",
+              "NetworkConfiguration": {
+                "awsvpcConfiguration": {
+                  "Subnets": [
+                    "subnet-01a1c4a376f9b4349"
+                  ],
+                  "AssignPublicIp": "ENABLED"
+                }
+              }
+            }
+          }
+        ]'
+        
+        echo "Updated EventBridge rule to use new task definition: $NEW_TASK_DEF_ARN"
 
   # Job 5: Testes de integração pós-deploy
   integration-tests:

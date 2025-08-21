@@ -60,5 +60,5 @@ CMD ["python", "extractor.py", "--production"]
 # Labels para metadata
 LABEL maintainer="Leonora Comercio Internacional"
 LABEL description="PNCP Data Extractor with LLM filtering"
-LABEL version="2.0"
+LABEL version="2.1"
 LABEL source="https://github.com/Leonora-Comercio-Internacional/pncpdataextractor"
