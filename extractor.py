@@ -187,6 +187,7 @@ class PNCPContractionsExtractor:
         try:
             # Salvar no S3 primeiro
             if hasattr(self, 'storage_manager') and self.storage_manager.use_s3:
+                self.logger.info(f"Salvando estado no S3: last_date={state.get('last_extraction_date')}")
                 state_json = json.dumps(state, indent=2, ensure_ascii=False, default=str)
                 self.storage_manager.s3_client.put_object(
                     Bucket=self.storage_manager.s3_bucket,
@@ -194,14 +195,24 @@ class PNCPContractionsExtractor:
                     Body=state_json.encode('utf-8'),
                     ContentType='application/json'
                 )
-                self.logger.info(f"Estado salvo no S3: total_records={state.get('total_records_extracted', 0)}")
+                self.logger.info(f"✅ Estado salvo no S3 com sucesso: last_date={state.get('last_extraction_date')}, total_records={state.get('total_records_extracted', 0)}")
+            else:
+                self.logger.warning("⚠️ Storage manager não está configurado para S3 - salvando apenas localmente")
             
             # Backup local também
-            with self._lock:
-                with open(self.config.state_file, 'w', encoding='utf-8') as f:
-                    json.dump(state, f, indent=2, ensure_ascii=False, default=str)
+            try:
+                with self._lock:
+                    with open(self.config.state_file, 'w', encoding='utf-8') as f:
+                        json.dump(state, f, indent=2, ensure_ascii=False, default=str)
+                    self.logger.debug("Estado salvo localmente também")
+            except Exception as local_error:
+                self.logger.warning(f"Erro ao salvar estado localmente: {local_error}")
+                
         except Exception as e:
-            self.logger.error(f"Erro ao salvar estado: {e}")
+            self.logger.error(f"❌ ERRO CRÍTICO ao salvar estado: {e}")
+            self.logger.error(f"State que tentou salvar: {json.dumps(state, default=str)[:200]}...")
+            # Re-raise para não silenciar o erro
+            raise
     
     def make_request(self, params: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Faz uma requisição para a API com retry logic otimizado"""
